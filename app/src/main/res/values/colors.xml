@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="purple">#8E24AA</color>
+    <color name="indigo">#3949AB</color>
+    <color name="cyan">#00ACC1</color>
+    <color name="blue">#21bff3</color>
+
+    <!--other color-->
+    <color name="background_color">#f2f2f2</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="hint">#767676</color>
+
+    <!--swipe tab color-->
+    <color name="tabIndicatorColor">#FFFFFF</color>
+    <color name="tabSelectedTextColor">#FFFFFF</color>
+    <color name="tabTextColor">#525252</color>
+</resources>

@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">KitabKuning</string>
+
+
+    <string name="menu_search">Masukkan kata</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="no_internet">No internet connection</string>
+    <string name="not_found">Data tidak ditemukan</string>
+
+    <!-- MENU -->
+    <string name="menu_info">Informasi</string>
+
+    <!-- Title -->
+    <string name="title_about">About</string>
+
+    <string name="app_id">ca-app-pub-5206172306814984~7751918580</string>
+    <string name="banner_ads">ca-app-pub-5206172306814984/7430809790</string>
+    <string name="interstitilal">ca-app-pub-5520181158609546~7051508259</string>
+
+    <!--information tab name-->
+    <string name="information_tab1">DH Tech</string>
+    <string name="information_tab2">Donasi</string>
+    <string name="information_tab3">Hubungi Kami</string>
+    <string name="information_tab4">Transaksi</string>
+
+    <string name="hint_email_subject">Subject :</string>
+    <string name="hint_email_message">Message :</string>
+    <string name="button_send">Send</string>
+
+
+    <!--app about information-->
+    <string name="app_version">Version 1.0</string>
+    <string name="app_copyright">Copyright &#169; Kitab Kuning Digital \n All rights reserved</string>
+    <string name="app_email">kitabkuningdigital@gmail.com</string>
+    <string name="share_summary">Share to your friends</string>
+    <string name="rate_summary">Give your rate and feedback</string>
+    <string name="more_summary">More apps from developer</string>
+    <string name="title_app_name">Application Name</string>
+    <string name="title_app_version">Build Version</string>
+    <string name="title_app_email">Email</string>
+    <string name="title_app_copyright">Copyright</string>
+    <string name="title_app_share">Share</string>
+    <string name="title_app_rate">Rate</string>
+    <string name="title_app_more">More</string>
+    <string name="more_apps">https://play.google.com/store/apps/developer?id=Kitab+Kuning+Digital</string>
+    <string name="share_content">I Would like to share this with you. Here You Can Download This Application from PlayStore</string>
+
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+
+
+
+    <!-- SETTING -->
+
+    <string-array name="prefTeksLatinSize">
+        <item name="small">Small</item>
+        <item name="medium">Medium</item>
+        <item name="large">Large</item>
+    </string-array>
+
+    <string-array name="prefTeksLatinValueSize">
+        <item name="small">14</item>
+        <item name="medium">18</item>
+        <item name="large">22</item>
+    </string-array>
+
+    <string-array name="prefTeksArabSize">
+        <item name="small">Small</item>
+        <item name="medium">Medium</item>
+        <item name="large">Large</item>
+    </string-array>
+
+    <string-array name="prefTeksArabValueSize">
+        <item name="small">18</item>
+        <item name="medium">24</item>
+        <item name="large">28</item>
+    </string-array>
+
+    <string name="apps_setting">Apps Setting</string>
+    <string name="ket_fontarab">Choose Arabic Font</string>
+    <string name="ket_fontlatin">Choose Latin Font</string>
+    <string name="ket_fontlatinsize">Choose Latin Font Size</string>
+    <string name="ket_fontarabsize">Choose Arabic Font Size</string>
+    <string name="ket_order">Choose Order Type</string>
+
+    <string-array name="prefTeksArab">
+        <item name="normal">Normal</item>
+        <item name="noorehira">Noorehira</item>
+        <item name="quran_majeed">Quran Majeed</item>
+    </string-array>
+
+    <string-array name="prefTeksArabValue">
+        <item name="normal"></item>
+        <item name="noorehira">noorehira.ttf</item>
+        <item name="quran_majeed">quran_majeed.ttf</item>
+    </string-array>
+
+    <string-array name="prefTeksLatin">
+        <item name="normal">Normal</item>
+        <item name="droidsanserif">Droid SanSerif</item>
+        <item name="nefel">Nefel Adeti</item>
+    </string-array>
+
+    <string-array name="prefTeksLatinValue">
+        <item name="normal"></item>
+        <item name="droidsanserif">droidsanserif_latin.ttf</item>
+        <item name="nefel">nefel_adeti.ttf</item>
+    </string-array>
+</resources>

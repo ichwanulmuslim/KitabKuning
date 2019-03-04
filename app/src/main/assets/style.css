@@ -1,0 +1,32 @@
+h1 {
+  font-weight: bold;
+  color: #000;
+  font-size: 32px;
+}
+
+@font-face {
+	font-family:"AlQalamQuranMajeedWeb";
+	src:url("Al_Qalam_Quran_Majeed_Web.eot?") format("eot"),url("Al_Qalam_Quran_Majeed_Web.woff") format("woff"),url("Al_Qalam_Quran_Majeed_Web.ttf") format("truetype"),url("Al_Qalam_Quran_Majeed_Web.svg#AlQalamQuranMajeedWeb") format("svg");font-weight:normal;font-style:normal;
+}
+@font-face {
+	font-family: 'noorehira';
+	src:url('noorehira.ttf');
+}
+
+@font-face {
+	font-family: 'nefel_adeti';
+	src:url('nefel_adeti.ttf');
+}
+
+
+h2 {
+  font-size: 28px;
+  text-align: right;
+  font-family:'noorehira';
+}
+
+p {
+  font-size: 18px;
+  text-align: left;
+  font-family:'nefel_adeti';
+}

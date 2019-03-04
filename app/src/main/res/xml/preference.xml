@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory 
+        android:title="@string/apps_setting"
+        android:key="key_prefernece">
+
+        <ListPreference 
+            android:key="prefFontArab"
+            android:entries="@array/prefTeksArab"
+            android:summary="@string/ket_fontarab"
+            android:entryValues="@array/prefTeksArabValue"
+            android:title="Set Font Arab"
+            />
+
+        <ListPreference
+            android:key="prefFontArabSize"
+            android:entries="@array/prefTeksArabSize"
+            android:summary="@string/ket_fontarabsize"
+            android:entryValues="@array/prefTeksArabValueSize"
+            android:title="Set Font Arab Size"
+            />
+
+        <ListPreference
+            android:key="prefFontLatin"
+            android:entries="@array/prefTeksLatin"
+            android:summary="@string/ket_fontlatin"
+            android:entryValues="@array/prefTeksLatinValue"
+            android:title="Set Font Latin"
+            />
+
+        <ListPreference
+            android:key="prefFontLatinSize"
+            android:entries="@array/prefTeksLatinSize"
+            android:summary="@string/ket_fontlatinsize"
+            android:entryValues="@array/prefTeksLatinValueSize"
+            android:title="Set Font Latin Size"
+            />
+        
+    </PreferenceCategory>
+
+</PreferenceScreen>
