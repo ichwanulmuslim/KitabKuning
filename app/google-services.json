@@ -1,0 +1,453 @@
+{
+  "project_info": {
+    "project_number": "701725015271",
+    "firebase_url": "https://kitab-arbain-nawawi.firebaseio.com",
+    "project_id": "kitab-arbain-nawawi",
+    "storage_bucket": "kitab-arbain-nawawi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:74336a3386baf1ec",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.arbain.nawawi.hadits"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-8rd45a5599f89pakp25tr239s6kano5f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.kitabkuning.islam.arbain.nawawi.hadits",
+            "certificate_hash": "d5401d4193233a01d7b7ef70fa9c828475a0162a"
+          }
+        },
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:149ab1e24ca78706",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.risalatul.muawanah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-496q2vp1roa9nn5m53q2s0erffacq3cr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.kitabkuning.islam.risalatul.muawanah",
+            "certificate_hash": "d5401d4193233a01d7b7ef70fa9c828475a0162a"
+          }
+        },
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:e6654e6f74471790",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.nashoihud.diniyyah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-a8v9e8pjcqa1i19i151haidl9fbvr51r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.kitabkuning.islam.nashoihud.diniyyah",
+            "certificate_hash": "d5401d4193233a01d7b7ef70fa9c828475a0162a"
+          }
+        },
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:954d994a79ed6eaa",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.targhib.wa.tarhib"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:20700660e5f4f9a4",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.nashoihul.ibad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:25955e76c33e72d9",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.syaraful.ummah.almuhammadiyyah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:48a570c4d9c0c9b8",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.jawahirul.kalamiyah.tauhid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:fb7f32d026962ffc",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.alhikam.ibnu.athoillah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:34f19e17681c1b7a",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.akhlaq.lilbanin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:cc5ca49e422ddc7e",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.amtsilatut.tashrif.sharaf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:f468aade28644f7f",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.hadits.bulghul.maram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:928a787029cf8add",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.matan.jurmiyah.nahwu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:ed9a1412cd25dc68",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.daqaaiqul.akhbar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
