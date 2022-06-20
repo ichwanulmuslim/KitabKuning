@@ -29,17 +29,6 @@ public class Kitab {
     public Kitab() {
     }
 
-    public Kitab(int idTable, int id, String judulArab, String judulIndonesia, String isiArab, String isiIndonesia, String urlGambar, String urlAudio) {
-        this.idTable = idTable;
-        this.id = id;
-        this.judulIndonesia = judulIndonesia;
-        this.judulArab = judulArab;
-        this.isiIndonesia = isiIndonesia;
-        this.isiArab = isiArab;
-        this.urlGambar = urlGambar;
-        this.urlAudio = urlAudio;
-    }
-
     public int getIdTable() {
         return idTable;
     }

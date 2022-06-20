@@ -8,9 +8,15 @@ h1 {
 	font-family:"AlQalamQuranMajeedWeb";
 	src:url("Al_Qalam_Quran_Majeed_Web.eot?") format("eot"),url("Al_Qalam_Quran_Majeed_Web.woff") format("woff"),url("Al_Qalam_Quran_Majeed_Web.ttf") format("truetype"),url("Al_Qalam_Quran_Majeed_Web.svg#AlQalamQuranMajeedWeb") format("svg");font-weight:normal;font-style:normal;
 }
+
 @font-face {
 	font-family: 'noorehira';
 	src:url('noorehira.ttf');
+}
+
+@font-face {
+	font-family: 'quran_majeed';
+	src:url('quran_majeed.ttf');
 }
 
 @font-face {
@@ -18,11 +24,16 @@ h1 {
 	src:url('nefel_adeti.ttf');
 }
 
+@font-face {
+  font-family: 'traditional_arabic';
+  src:url('traditional_arabic.ttf');
+}
+
 
 h2 {
   font-size: 28px;
   text-align: right;
-  font-family:'noorehira';
+  direction: rtl;
 }
 
 p {

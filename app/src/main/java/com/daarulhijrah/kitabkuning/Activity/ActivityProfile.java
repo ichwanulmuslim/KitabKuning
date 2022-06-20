@@ -2,10 +2,6 @@ package com.daarulhijrah.kitabkuning.Activity;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,8 +11,14 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.bumptech.glide.Glide;
 import com.daarulhijrah.kitabkuning.R;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 
 public class ActivityProfile extends AppCompatActivity {
@@ -31,7 +33,7 @@ public class ActivityProfile extends AppCompatActivity {
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        final ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -49,7 +51,7 @@ public class ActivityProfile extends AppCompatActivity {
 
         webview.setWebViewClient(new myWebClient());
 //        webview.loadUrl("file:///android_asset/html/profile.html");
-        webview.loadUrl("http://daarulhijrah.org/profil/");
+        webview.loadUrl("https://daarulhijrah.org/profil/");
 
         webview.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {

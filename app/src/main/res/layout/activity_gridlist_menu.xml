@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <GridView
+        android:id="@+id/gridview_list_kitab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/adView"
+        android:divider="@null"
+        android:numColumns="1"
+        android:visibility="visible"
+        android:scrollbars="vertical"
+        android:scrollbarFadeDuration="2000"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="insideOverlay"
+        android:fastScrollEnabled="true"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:adUnitId="@string/banner_ads"
+        android:layout_alignParentBottom="true"
+        app:adSize="SMART_BANNER" />
+
+    <ProgressBar
+        android:id="@+id/prgLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/txtAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/not_found"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

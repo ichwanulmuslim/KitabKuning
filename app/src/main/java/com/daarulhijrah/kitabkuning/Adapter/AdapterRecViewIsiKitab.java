@@ -5,14 +5,16 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.daarulhijrah.kitabkuning.Model.Kitab;
 import com.daarulhijrah.kitabkuning.R;
@@ -26,8 +28,8 @@ public class AdapterRecViewIsiKitab extends RecyclerView.Adapter<AdapterRecViewI
     ArrayList<Kitab> dataIsiKitab = new ArrayList<>();
 
 
-    public AdapterRecViewIsiKitab(Activity activity, int adapter_recview_listkitab, ArrayList<Kitab> dataKitab) {
-        this.context = activity;
+    public AdapterRecViewIsiKitab(Context context, int adapter_recview_listkitab, ArrayList<Kitab> dataKitab) {
+        this.context = context;
         this.resourceId = adapter_recview_listkitab;
         this.dataIsiKitab = dataKitab;
     }

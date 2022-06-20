@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         />
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_listmenu_isikitab"
         android:layout_below="@+id/toolbar"
         android:layout_above="@+id/adView"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         app:adUnitId="@string/banner_ads"
         android:layout_alignParentBottom="true"
-        app:adSize="BANNER" />
+        app:adSize="SMART_BANNER" />
 
     <ProgressBar
         android:id="@+id/prgLoading"

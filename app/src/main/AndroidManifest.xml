@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.daarulhijrah.kitabkuning">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -7,16 +8,17 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon512"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icon512"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.ActivityProfile" />
         <activity android:name=".Activity.ActivityAbout" />
         <activity android:name=".Activity.ActivityInformation" />
-        <activity android:name=".Activity.ActivityListMenu" />
+        <activity android:name=".Activity.ActivityRecViewList" />
+        <activity android:name=".Activity.ActivityGridViewList" />
         <activity android:name=".Activity.ActivitySetting" />
         <activity android:name=".Activity.IntroActivity">
             <intent-filter>
@@ -30,7 +32,8 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/app_id" />
 
-        <activity android:name=".Activity.ActivityDetailKitab"></activity>
+        <activity android:name=".Activity.ActivityDetailKitabSlider"></activity>
+        <activity android:name=".Activity.ActivityDetailKitab" />
     </application>
 
 </manifest>

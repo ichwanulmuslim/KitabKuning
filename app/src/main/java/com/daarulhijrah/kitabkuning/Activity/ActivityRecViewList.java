@@ -6,13 +6,17 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,7 +46,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class ActivityListMenu extends AppCompatActivity {
+public class ActivityRecViewList extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ProgressBar progressBar;
@@ -63,7 +67,7 @@ public class ActivityListMenu extends AppCompatActivity {
     RequestQueue requestQueue;
     private AdView mAdView;
 
-    public String textCari;
+//    public String textCari;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -73,7 +77,7 @@ public class ActivityListMenu extends AppCompatActivity {
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        final ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -91,7 +95,7 @@ public class ActivityListMenu extends AppCompatActivity {
 
         dataSource.open();
         if(Category_ID==0) {
-            arrayListDataKitab = dataSource.getSearchText("");
+            arrayListDataKitab = dataSource.getAllData();
 
             if (arrayListDataKitab.isEmpty()) {
                 new AlertDialog.Builder(this)
@@ -127,28 +131,10 @@ public class ActivityListMenu extends AppCompatActivity {
             mAdView.setVisibility(View.GONE);
         }else {
             mAdView.setVisibility(View.VISIBLE);
-            mAdView.loadAd(new AdRequest.Builder().addTestDevice("A18152BD3A03664CE2A68FB6F42DD224").build());
+            mAdView.loadAd(new AdRequest.Builder().addTestDevice(Config.TEST_DEVICE).build());
         }
 
         setRecyclerAdapter("");
-//        showRecyclerAdapter();
-
-//        linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-//        recyclerView.setLayoutManager(linearLayoutManager);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setItemAnimator(new DefaultItemAnimator());
-//
-//        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(View view, int position) {
-//                Intent iDetail = new Intent(ActivityListMenu.this, ActivityDetailKitab.class);
-//                iDetail.putExtra("id_tabel", arrayListDataKitab.get(position).getIdTable());
-////                Log.e("Barang ID",arrayListDataKitab.get(position).get()+" - "+arrListProduk.get(position).getMenu_name());
-////				displayInterstitial();
-//                startActivity(iDetail);
-//
-//            }
-//        }));
 
     }
 
@@ -158,8 +144,8 @@ public class ActivityListMenu extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_activity_list, menu);
 
-        final android.support.v7.widget.SearchView searchView = (android.support.v7.widget.SearchView)
-                MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
+//                MenuItemCompat.getActionProvider(menu.findItem(R.id.action_search));
 
         final MenuItem searchMenuItem = menu.findItem(R.id.action_search);
 
@@ -175,43 +161,35 @@ public class ActivityListMenu extends AppCompatActivity {
             }
         });
 
-        searchView.setOnQueryTextListener(new android.support.v7.widget.SearchView.OnQueryTextListener() {
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextChange(final String query) {
-
 
                 dataSource.open();
                 arrayListDataKitab = dataSource.getSearchText(query);
                 dataSource.close();
 
-//                textCari = newText;
-//
-//                mla = new AdapterKitab(ActivityMenuList.this, arrListProduk);
-//                if (arrListProduk.isEmpty()) {
-//                    listMenu.setVisibility(View.GONE);
-//                    txtAlert.setVisibility(View.VISIBLE);
-//                } else {
-//                    listMenu.setVisibility(View.VISIBLE);
-//                    txtAlert.setVisibility(View.GONE);
-//                    listMenu.setAdapter(mla);
-//                }
 
-                setRecyclerAdapter(query);
-//                showRecyclerAdapter();
-//
-//                listMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//                    public void onItemClick(AdapterView<?> arg0, View arg1, int position,
-//                                            long arg3) {
-//                        // TODO Auto-generated method stub
-//                        // go to menu detail page
-//                        Intent iDetail = new Intent(ActivityMenuList.this, ActivityDetailPagerNoImage.class);
-//                        iDetail.putExtra(getResources().getString(R.string.SEARCHED_TEXT), newText);
-//                        iDetail.putExtra("menu_id", arrListProduk.get(position).getID_produk());
-//                        Log.e("Barang ID", arrListProduk.get(position).getID_produk() + " - " + arrListProduk.get(position).getMenu_name());
-//                        startActivity(iDetail);
-//                    }
-//                });
+                adapterRecViewIsiKitab = new AdapterRecViewIsiKitab(getApplicationContext(), R.layout.adapter_recview_listkitab, arrayListDataKitab);
+                recyclerView.setAdapter(adapterRecViewIsiKitab);
+                if (arrayListDataKitab.isEmpty()) {
+                    txtAlert.setVisibility(View.VISIBLE);
+                } else {
+                    txtAlert.setVisibility(View.GONE);
+                }
+
+                recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+
+                        Intent iDetail = new Intent(ActivityRecViewList.this, ActivityDetailKitab.class);
+                        iDetail.putExtra("id_tabel", arrayListDataKitab.get(position).getIdTable());
+                        iDetail.putExtra("text_cari", query);
+                        startActivity(iDetail);
+
+                    }
+                }));
+
 
 
                 return false;
@@ -225,7 +203,6 @@ public class ActivityListMenu extends AppCompatActivity {
                 arrayListDataKitab = dataSource.getSearchText(query);
                 dataSource.close();
 
-                textCari = query;
 
 //                mla = new AdapterKitab(ActivityMenuList.this, arrListProduk);
 //                if(arrListProduk.isEmpty()){
@@ -237,8 +214,7 @@ public class ActivityListMenu extends AppCompatActivity {
 //                    listMenu.setAdapter(mla);
 //                }
 
-                setRecyclerAdapter(query);
-//                showRecyclerAdapter();
+//                setRecyclerAdapter(query);
 //
 //                listMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //
@@ -281,6 +257,7 @@ public class ActivityListMenu extends AppCompatActivity {
 
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                deleteDataKitab();
                                 getDataKitab();
                             }
 
@@ -291,9 +268,7 @@ public class ActivityListMenu extends AppCompatActivity {
 
 
             case R.id.action_delete:
-                dataSource.open();
-                dataSource.deleteTableKitab();
-                dataSource.close();
+                    deleteDataKitab();
                 return true;
 
 
@@ -307,13 +282,19 @@ public class ActivityListMenu extends AppCompatActivity {
         }
     }
 
+    private void deleteDataKitab(){
+        dataSource.open();
+        dataSource.deleteTableKitab();
+        dataSource.close();
+    }
+
 
     private void setRecyclerAdapter(String textCari) {
         progressBar.setVisibility(View.GONE);
-        adapterRecViewIsiKitab = new AdapterRecViewIsiKitab(this, R.layout.adapter_recview_listkitab, arrayListDataKitab);
+        adapterRecViewIsiKitab = new AdapterRecViewIsiKitab(getApplicationContext(), R.layout.adapter_recview_listkitab, arrayListDataKitab);
         recyclerView.setAdapter(adapterRecViewIsiKitab);
 
-        linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -321,11 +302,10 @@ public class ActivityListMenu extends AppCompatActivity {
         recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent iDetail = new Intent(ActivityListMenu.this, ActivityDetailKitab.class);
+
+                Intent iDetail = new Intent(ActivityRecViewList.this, ActivityDetailKitab.class);
                 iDetail.putExtra("id_tabel", arrayListDataKitab.get(position).getIdTable());
-                iDetail.putExtra("text_cari", arrayListDataKitab.get(position).getIdTable());
-//                Log.e("Barang ID",arrayListDataKitab.get(position).get()+" - "+arrListProduk.get(position).getMenu_name());
-//				displayInterstitial();
+                iDetail.putExtra("text_cari", textCari);
                 startActivity(iDetail);
 
             }
@@ -334,7 +314,7 @@ public class ActivityListMenu extends AppCompatActivity {
 
     private void getDataKitab(){
 //        String URL = MenuAPI+"?auth=bab&id="+email+"&key="+keyword+"&order="+order;
-        String URL_KITAB = Config.API_URL+Config.TABEL_NAMA_KITAB+Config.JSON_FORMAT;
+        String URL_KITAB = Config.API_URL+Config.TABEL_NAMA_KITAB+Config.JSON_FORMAT+Config.ORDER_KITAB_ASC;
 
         requestQueue = Volley.newRequestQueue(this);
         StringRequest req = new StringRequest(Request.Method.GET, URL_KITAB, new Response.Listener<String>() {
@@ -347,7 +327,11 @@ public class ActivityListMenu extends AppCompatActivity {
                     JSONObject json = new JSONObject(response);
                     JSONArray data = json.getJSONArray(Config.TABEL_NAMA_KITAB);
 //                    Log.e("Result",data.length()+"");
-                    for (int i = 0; i < data.length(); i++) {
+                    final int numberOfItemsInResp = data.length();
+
+                    arrayListDataKitab.clear();
+
+                    for (int i = 0; i < numberOfItemsInResp; i++) {
                         JSONObject object = data.getJSONObject(i);
 
                         arrayListDataKitab.add(new Kitab(

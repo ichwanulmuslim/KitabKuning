@@ -6,7 +6,13 @@ package com.daarulhijrah.kitabkuning.Model;
 
 public class PromotionSlide {
 
-    String pathPhoto, textPhoto;
+    String pathPhoto, textPhoto, urlLink;
+
+    public PromotionSlide(String pathPhoto, String textPhoto, String urlLink) {
+        this.pathPhoto = pathPhoto;
+        this.textPhoto = textPhoto;
+        this.urlLink = urlLink;
+    }
 
     public PromotionSlide(String pathPhoto, String textPhoto) {
         this.pathPhoto = pathPhoto;
@@ -30,5 +36,13 @@ public class PromotionSlide {
 
     public void setTextPhoto(String textPhoto) {
         this.textPhoto = textPhoto;
+    }
+
+    public String getUrlLink() {
+        return urlLink;
+    }
+
+    public void setUrlLink(String urlLink) {
+        this.urlLink = urlLink;
     }
 }

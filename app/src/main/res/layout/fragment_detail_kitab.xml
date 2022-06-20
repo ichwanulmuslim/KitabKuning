@@ -5,17 +5,17 @@ xmlns:card_view="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent">
 
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
     android:id="@+id/main_content"
-    android:visibility="gone"
+    android:visibility="visible"
     android:background="#e7e7e7"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,9 +23,9 @@ android:layout_height="match_parent">
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         >
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/sclDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,7 +38,7 @@ android:layout_height="match_parent">
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cv0"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -58,18 +58,9 @@ android:layout_height="match_parent">
                     android:text="Produk"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tv_frag_detail_kitab_judul_indonesia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:layout_gravity="center|top"
-                    android:layout_marginBottom="4px"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:textSize="20dp"
-                    android:visibility="gone"/>
 
-            </android.support.v7.widget.CardView>
+
+            </androidx.cardview.widget.CardView>
 
 
             <TextView
@@ -79,25 +70,7 @@ android:layout_height="match_parent">
                 android:textSize="4sp" />
 
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:paddingBottom="3dp"
-                android:paddingTop="3dp"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <ImageView
-                    android:id="@+id/img_frag_detail_kitab_gambar"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/image2"
-                    />
-
-            </RelativeLayout>
-
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -112,61 +85,25 @@ android:layout_height="match_parent">
                     android:background="@color/white">
 
                     <TextView
-                        android:id="@+id/txtSubText"
+                        android:id="@+id/tv_frag_detail_kitab_judul_indonesia"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="18dp"
-                        android:textColor="@color/black"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="10dp"
-                        android:text="@string/app_name"
-                        android:textSize="16sp"
-                        android:visibility="gone"/>
-
-                    <TextView
-                        android:id="@+id/txtKonten"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="18dp"
-                        android:textColor="@color/black"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_height="fill_parent"
                         android:layout_gravity="center|top"
-                        android:text="@string/app_name"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/radio"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:textColor="@color/black"
-                        android:layout_margin="8dp"
-                        android:textIsSelectable="true"
-                        android:textSize="28sp" />
-
-
+                        android:layout_marginBottom="4dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:textSize="20sp" />
 
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
-
-            <!--<com.google.android.gms.ads.NativeExpressAdView
-                android:id="@+id/adView1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                app:adUnitId="@string/native_ads"
-                app:adSize="320x80" />-->
+            </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/idesck"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:textSize="3sp" />
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="10dp"
@@ -174,7 +111,7 @@ android:layout_height="match_parent">
                 card_view:cardElevation="8sp"
                 card_view:cardUseCompatPadding="true">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -189,11 +126,11 @@ android:layout_height="match_parent">
                         android:layout_height="match_parent"
                         android:scrollbars="none" />
 
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cv1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -218,21 +155,18 @@ android:layout_height="match_parent">
                         android:scrollbars="none" />
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:textSize="3sp" />
 
             <LinearLayout
                 android:id="@+id/rel_ads"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-
-                <com.google.android.gms.ads.AdView
-                    android:id="@+id/adView1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:adUnitId="@string/banner_ads"
-                    app:adSize="MEDIUM_RECTANGLE" />
 
                 <TextView
                     android:id="@+id/text_info"
@@ -242,7 +176,17 @@ android:layout_height="match_parent">
                     android:layout_gravity="center"
                     android:textColor="@color/black"
                     android:layout_marginTop="2dp"
-                    android:text="Laporkan kami jika iklan tidak sesuai dengan norma agama"/>
+                    android:text="@string/laporan_iklan"/>
+
+                <TextView
+                    android:id="@+id/about_dev"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/about_devs"/>
 
 
             </LinearLayout>
@@ -251,10 +195,60 @@ android:layout_height="match_parent">
 
 
 
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
-</android.support.design.widget.CoordinatorLayout>
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fl_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="10dp"
+        app:layout_collapseMode="pin"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        app:menu_labels_ellipsize="end"
+        app:menu_labels_singleLine="true"
+        app:menu_backgroundColor="#ccffffff"
+        app:menu_fab_size="normal">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fl_tts_arab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_record_voice_over_white_24dp"
+            app:fab_size="normal"
+            app:fab_label="TTS Arab" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fl_tts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_record_voice_over_white_24dp"
+            app:fab_size="normal"
+            app:fab_label="TTS Indonesia" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fl_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_share_white_24dp"
+            app:fab_size="normal"
+            app:fab_label="Bagikan/Share Ilmu" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fl_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_mode_edit_white_24dp"
+            app:fab_size="normal"
+            app:fab_label="Lapor Kesalahan Ketik dan Terjemah" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 <ProgressBar
     android:id="@+id/prgLoading"
@@ -271,6 +265,22 @@ android:layout_height="match_parent">
     android:textSize="14sp"
     android:visibility="gone"
     android:layout_centerInParent="true" />
+
+    <com.sackcentury.shinebuttonlib.ShineButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@android:color/darker_gray"
+        android:id="@+id/shine_favorite_btn"
+        app:btn_color="@android:color/darker_gray"
+        app:btn_fill_color="@color/pink"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="15dp"
+        app:siShape="@raw/heart"
+        app:shine_turn_angle="20"
+        app:shine_count="15"
+        app:allow_random_color="true"
+        app:enable_flashing="true"/>
 
 
 

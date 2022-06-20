@@ -3,7 +3,6 @@ package com.daarulhijrah.kitabkuning.Fragment;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +12,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.daarulhijrah.kitabkuning.R;
 
@@ -40,7 +41,7 @@ public class FragmentInfoTab1_HowToBuy extends Fragment {
 
         webview.setWebViewClient(new myWebClient());
 //        webview.loadUrl("file:///android_asset/html/how_to_buy.html");
-        webview.loadUrl("http://ichwanulmuslim.com/kitab/how_to_buy.html");
+        webview.loadUrl("https://ichwanulmuslim.com/kitab/how_to_buy.html");
 
         webview.setOnKeyListener(new OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {

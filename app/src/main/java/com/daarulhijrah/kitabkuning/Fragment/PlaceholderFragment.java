@@ -1,23 +1,19 @@
 package com.daarulhijrah.kitabkuning.Fragment;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.speech.tts.TextToSpeech;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.widget.NestedScrollView;
+import androidx.fragment.app.Fragment;
+
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.BackgroundColorSpan;
@@ -28,23 +24,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.daarulhijrah.kitabkuning.Model.Kitab;
 import com.daarulhijrah.kitabkuning.R;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
-import static com.daarulhijrah.kitabkuning.Activity.ActivityListMenu.dataSource;
+import static com.daarulhijrah.kitabkuning.Activity.ActivityRecViewList.dataSource;
 
 public class PlaceholderFragment extends Fragment {
     /**
@@ -89,7 +80,7 @@ public class PlaceholderFragment extends Fragment {
 
         final Toolbar toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-        final android.support.v7.app.ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        final ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
         if (actionBar != null) {
             ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -151,7 +142,7 @@ public class PlaceholderFragment extends Fragment {
         for(int i=0 ; i<arrayListKitab.size() ; i++) {
             coordinatorLayout.setVisibility(View.VISIBLE);
 
-            idKitab = arrayListKitab.get(i).getId();
+            idKitab = arrayListKitab.get(i).getIdTable();
             judulArab = arrayListKitab.get(i).getJudulArab();
             judulIndonesia = arrayListKitab.get(i).getJudulIndonesia();
             isiArab = arrayListKitab.get(i).getIsiArab();
@@ -183,7 +174,7 @@ public class PlaceholderFragment extends Fragment {
 
 
             tvJudulArab.setText(judulArab);
-            tvJudulIndonesia.setText(judulIndonesia);
+            tvJudulIndonesia.setText(idKitab+"-"+judulIndonesia);
 
 
             if(!searchedText.matches("")||!searchedText.isEmpty()){

@@ -1,20 +1,22 @@
 package com.daarulhijrah.kitabkuning.Activity;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.MenuItem;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.daarulhijrah.kitabkuning.Fragment.FragmentInfoTab1_HowToBuy;
 import com.daarulhijrah.kitabkuning.Fragment.FragmentInfoTab2_Payment;
 import com.daarulhijrah.kitabkuning.Fragment.FragmentInfoTab3_ContactUs;
 import com.daarulhijrah.kitabkuning.R;
+import com.google.android.material.tabs.TabLayout;
 
 
 public class ActivityInformation extends AppCompatActivity {
@@ -30,11 +32,11 @@ public class ActivityInformation extends AppCompatActivity {
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        final ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle(R.string.menu_info);
+            getSupportActionBar().setTitle(R.string.title_info);
         }
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);

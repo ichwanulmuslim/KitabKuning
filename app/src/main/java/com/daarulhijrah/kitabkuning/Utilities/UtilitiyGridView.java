@@ -18,7 +18,7 @@ public class UtilitiyGridView {
 
         int totalHeight = listView.getPaddingTop() + listView.getPaddingBottom();
 
-        for (int i = 0; i < listAdapter.getCount()/2; i++) {
+        for (int i = 0; i < listAdapter.getCount()/3; i++) {
             View listItem = listAdapter.getView(i, null, listView);
             if (listItem instanceof ViewGroup) {
                 listItem.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -29,7 +29,7 @@ public class UtilitiyGridView {
         }
 
         ViewGroup.LayoutParams params = listView.getLayoutParams();
-        params.height = totalHeight + (listView.getHeight() * (listAdapter.getCount() - 1));
+        params.height = totalHeight + (listView.getHeight() * (listAdapter.getCount() - 2));
         listView.setLayoutParams(params);
     }
 }

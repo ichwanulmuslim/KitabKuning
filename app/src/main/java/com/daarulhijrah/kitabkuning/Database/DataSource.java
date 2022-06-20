@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.daarulhijrah.kitabkuning.Model.Kitab;
 
@@ -45,6 +46,7 @@ public class DataSource {
             contentValues.put(DBHelper.Kitab_url_audio,itemKitab.getUrlAudio());
             contentValues.put(DBHelper.Kitab_favorite,itemKitab.getFavorite());
             contentValues.put(DBHelper.Kitab_recent,itemKitab.getRecent());
+
             db.insert(DBHelper.TABLE_KITAB,null,contentValues);
 
         }
@@ -66,7 +68,7 @@ public class DataSource {
     public ArrayList<Kitab> getItemKitab(int idTabel){
         ArrayList<Kitab> kitabArrayList = new ArrayList<Kitab>();
 
-        Cursor cursor = db.query(DBHelper.TABLE_KITAB, allColumns, DBHelper.Kitab_id_tabel+" = "+idTabel, null, null, null, DBHelper.Kitab_id+" asc");
+        Cursor cursor = db.query(DBHelper.TABLE_KITAB, allColumns, DBHelper.Kitab_id_tabel+" = "+idTabel, null, null, null, DBHelper.Kitab_id_tabel+" asc");
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
             Kitab itemKitab = cursorToKitab(cursor,"");
@@ -79,11 +81,37 @@ public class DataSource {
     public ArrayList<Kitab> getAllData(){
         ArrayList<Kitab> kitabArrayList = new ArrayList<Kitab>();
 
-        Cursor cursor = db.query(DBHelper.TABLE_KITAB, allColumns, DBHelper.Kitab_id_tabel, null, null, null, DBHelper.Kitab_id+" asc");
+        Cursor cursor = db.query(DBHelper.TABLE_KITAB, allColumns, null, null, null, null, DBHelper.Kitab_id+" asc");
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
-            Kitab itemKitab = cursorToKitab(cursor,"");
-            kitabArrayList.add(itemKitab);
+            Kitab kitab = cursorToKitab(cursor, "");
+            kitabArrayList.add(kitab);
+            cursor.moveToNext();
+        }
+        return kitabArrayList;
+    }
+
+    public ArrayList<Kitab> getFavoriteData(){
+        ArrayList<Kitab> kitabArrayList = new ArrayList<Kitab>();
+
+        Cursor cursor = db.query(DBHelper.TABLE_KITAB, allColumns, DBHelper.Kitab_favorite+"=1", null, null, null, DBHelper.Kitab_id+" asc");
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            Kitab kitab = cursorToKitab(cursor, "");
+            kitabArrayList.add(kitab);
+            cursor.moveToNext();
+        }
+        return kitabArrayList;
+    }
+
+    public ArrayList<Kitab> getRecentData(){
+        ArrayList<Kitab> kitabArrayList = new ArrayList<Kitab>();
+
+        Cursor cursor = db.query(DBHelper.TABLE_KITAB, allColumns, DBHelper.Kitab_recent+"=1", null, null, null, DBHelper.Kitab_id+" asc");
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            Kitab kitab = cursorToKitab(cursor, "");
+            kitabArrayList.add(kitab);
             cursor.moveToNext();
         }
         return kitabArrayList;
@@ -132,6 +160,49 @@ public class DataSource {
     public void deleteTableKitab(){
         db.execSQL("DELETE FROM "+DBHelper.TABLE_KITAB);
         db.execSQL("VACUUM");
+    }
+
+    public void updateFavorite(long id, int intFav){
+        // this is a key value pair holder used by android's SQLite functions
+        ContentValues values = new ContentValues();
+        values.put(DBHelper.Kitab_favorite, intFav);
+//        values.put(TOTAL_PRICE, total_price);
+
+        // ask the database object to update the database row of given rowID
+        try {db.update(DBHelper.TABLE_KITAB, values, DBHelper.Kitab_id_tabel + "=" + id, null);}
+        catch (Exception e)
+        {
+            Log.e("DB Error", e.toString());
+            e.printStackTrace();
+        }
+    }
+
+    public void resetRecent(){
+        // this is a key value pair holder used by android's SQLite functions
+        ContentValues values = new ContentValues();
+        values.put(DBHelper.Kitab_recent, 0);
+
+        // ask the database object to update the database row of given rowID
+        try {db.update(DBHelper.TABLE_KITAB, values, null, null);}
+        catch (Exception e)
+        {
+            Log.e("DB Error", e.toString());
+            e.printStackTrace();
+        }
+    }
+
+    public void updateRecent(long id, int recent){
+        // this is a key value pair holder used by android's SQLite functions
+        ContentValues values = new ContentValues();
+        values.put(DBHelper.Kitab_recent, recent);
+
+        // ask the database object to update the database row of given rowID
+        try {db.update(DBHelper.TABLE_KITAB, values, DBHelper.Kitab_id_tabel + "=" + id, null);}
+        catch (Exception e)
+        {
+            Log.e("DB Error", e.toString());
+            e.printStackTrace();
+        }
     }
 
 }
