@@ -89,7 +89,7 @@
     </string-array>
 
     <string-array name="prefTeksArabValueSize">
-        <item name="small">20</item>
+        <item name="small">21</item>
         <item name="medium">26</item>
         <item name="large">30</item>
     </string-array>
