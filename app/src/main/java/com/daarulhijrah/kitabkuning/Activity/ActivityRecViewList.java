@@ -131,7 +131,7 @@ public class ActivityRecViewList extends AppCompatActivity {
             mAdView.setVisibility(View.GONE);
         }else {
             mAdView.setVisibility(View.VISIBLE);
-            mAdView.loadAd(new AdRequest.Builder().addTestDevice(Config.TEST_DEVICE).build());
+            mAdView.loadAd(new AdRequest.Builder().build());
         }
 
         setRecyclerAdapter("");

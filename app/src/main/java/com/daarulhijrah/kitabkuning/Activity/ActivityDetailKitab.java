@@ -96,7 +96,7 @@ public class ActivityDetailKitab extends AppCompatActivity {
             adView.setVisibility(View.GONE);
         }else {
             adView.setVisibility(View.VISIBLE);
-            adView.loadAd(new AdRequest.Builder().addTestDevice(Config.TEST_DEVICE).build());
+            adView.loadAd(new AdRequest.Builder().build());
         }
 
         idKitab = arrayListDataKitab.get(0).getId();

@@ -6,9 +6,6 @@ android:layout_width="match_parent"
 android:layout_height="match_parent">
 
 <androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/tools"
     android:id="@+id/main_content"
     android:visibility="visible"
     android:background="#e7e7e7"
@@ -197,53 +194,52 @@ android:layout_height="match_parent">
 
     </androidx.core.widget.NestedScrollView>
 
-
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/fl_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:paddingRight="10dp"
-        app:layout_collapseMode="pin"
-        android:paddingBottom="10dp"
+        android:layout_alignParentBottom="true"
         android:paddingLeft="10dp"
-        app:menu_labels_ellipsize="end"
-        app:menu_labels_singleLine="true"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_collapseMode="pin"
         app:menu_backgroundColor="#ccffffff"
-        app:menu_fab_size="normal">
+        app:menu_fab_size="normal"
+        app:menu_labels_ellipsize="end"
+        app:menu_labels_singleLine="true">
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fl_tts_arab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_record_voice_over_white_24dp"
-            app:fab_size="normal"
-            app:fab_label="TTS Arab" />
+            app:fab_label="TTS Arab"
+            app:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fl_tts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_record_voice_over_white_24dp"
-            app:fab_size="normal"
-            app:fab_label="TTS Indonesia" />
+            app:fab_label="TTS Indonesia"
+            app:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fl_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_share_white_24dp"
-            app:fab_size="normal"
-            app:fab_label="Bagikan/Share Ilmu" />
+            app:fab_label="Bagikan/Share Ilmu"
+            app:fab_size="normal" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fl_report"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_mode_edit_white_24dp"
-            app:fab_size="normal"
-            app:fab_label="Lapor Kesalahan Ketik dan Terjemah" />
+            app:fab_label="Lapor Kesalahan Ketik dan Terjemah"
+            app:fab_size="normal" />
 
     </com.github.clans.fab.FloatingActionMenu>
 
@@ -266,7 +262,18 @@ android:layout_height="match_parent">
     android:visibility="gone"
     android:layout_centerInParent="true" />
 
-    <com.sackcentury.shinebuttonlib.ShineButton
+
+    <co.ankurg.expressview.ExpressView
+        android:id="@+id/likeButton"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp" />
+
+    <!--<com.sackcentury.shinebuttonlib.ShineButton
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@android:color/darker_gray"
@@ -280,7 +287,7 @@ android:layout_height="match_parent">
         app:shine_turn_angle="20"
         app:shine_count="15"
         app:allow_random_color="true"
-        app:enable_flashing="true"/>
+        app:enable_flashing="true"/>-->
 
 
 

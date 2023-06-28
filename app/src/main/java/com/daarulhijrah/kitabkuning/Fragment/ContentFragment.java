@@ -1,11 +1,15 @@
 package com.daarulhijrah.kitabkuning.Fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -46,7 +50,12 @@ import com.daarulhijrah.kitabkuning.Utilities.RecyclerItemClickListener;
 import com.daarulhijrah.kitabkuning.Utilities.UtilitiyGridView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.OnPaidEventListener;
+import com.google.android.gms.ads.ResponseInfo;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageClickListener;
 import com.synnapps.carouselview.ImageListener;
@@ -160,7 +169,7 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
             textAdsIklan.setVisibility(View.GONE);
         }else {
             mAdView.setVisibility(View.VISIBLE);
-            mAdView.loadAd(new AdRequest.Builder().addTestDevice(Config.TEST_DEVICE).build());
+            mAdView.loadAd(new AdRequest.Builder().build());
         }
 
         layoutTokoMitra = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
@@ -340,18 +349,73 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
     private InterstitialAd mInterstitial;
 
     public void loadAds(){
-        mInterstitial = new InterstitialAd(getActivity());
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("A18152BD3A03664CE2A68FB6F42DD224")
-                .build();
-        mInterstitial.setAdUnitId(getResources().getString(R.string.interstitilal_ads));
-        mInterstitial.loadAd(adRequest);
-        mInterstitial.show();
+
+        mInterstitial = new InterstitialAd() {
+            @Nullable
+            @Override
+            public FullScreenContentCallback getFullScreenContentCallback() {
+                return null;
+            }
+
+            @Nullable
+            @Override
+            public OnPaidEventListener getOnPaidEventListener() {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            public ResponseInfo getResponseInfo() {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            public String getAdUnitId() {
+                return null;
+            }
+
+            @Override
+            public void setFullScreenContentCallback(@Nullable FullScreenContentCallback fullScreenContentCallback) {
+
+            }
+
+            @Override
+            public void setImmersiveMode(boolean b) {
+
+            }
+
+            @Override
+            public void setOnPaidEventListener(@Nullable OnPaidEventListener onPaidEventListener) {
+
+            }
+
+            @Override
+            public void show(@NonNull Activity activity) {
+
+            }
+        };
+//        mInterstitial = new InterstitialAd(getActivity());
+        AdRequest adRequest = new AdRequest.Builder().build();
+        InterstitialAd.load(getActivity(), getResources().getString(R.string.interstitilal_ads), adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        mInterstitial = null;
+                        super.onAdFailedToLoad(loadAdError);
+                    }
+
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        mInterstitial = interstitialAd;
+                        super.onAdLoaded(interstitialAd);
+                    }
+                });
+
     }
 
     public void displayInterstitial() {
-        if (mInterstitial.isLoaded()) {
-            mInterstitial.show();
-        }
+            mInterstitial.show(getActivity());
     }
 
 

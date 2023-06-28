@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <io.codetail.widget.RevealFrameLayout
+        <com.google.android.material.circularreveal.CircularRevealFrameLayout
             android:id="@+id/container_frame"
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
@@ -44,7 +44,7 @@
 <!--                android:minHeight="?attr/actionBarSize"-->
 <!--                />-->
 
-        </io.codetail.widget.RevealFrameLayout>
+        </com.google.android.material.circularreveal.CircularRevealFrameLayout>
 
         <ScrollView
             android:id="@+id/scrollView"

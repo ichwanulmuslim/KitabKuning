@@ -20,7 +20,8 @@
         <activity android:name=".Activity.ActivityRecViewList" />
         <activity android:name=".Activity.ActivityGridViewList" />
         <activity android:name=".Activity.ActivitySetting" />
-        <activity android:name=".Activity.IntroActivity">
+        <activity android:name=".Activity.IntroActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

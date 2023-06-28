@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Jawahirul Kalamiyah</string>
-    <string name="app_description">Syaikh Thohir bin Sholeh Al-Jazairi</string>
+    <string name="app_name">At-Tibyan Imam Nawawi</string>
+    <string name="app_description">Fi Adabi Hamalatil Qur`an</string>
 
     <string name="menu_search">Masukkan kata</string>
 
@@ -11,12 +11,12 @@
     <string name="no_internet">No internet connection</string>
     <string name="not_found">Data tidak ditemukan</string>
 
-    <string name="app_id">ca-app-pub-5206172306814984~3389839815</string>
-    <string name="banner_ads">ca-app-pub-5206172306814984/1665193391</string>
-    <string name="interstitilal_ads">ca-app-pub-5206172306814984/6263415161</string>
+    <string name="app_id">ca-app-pub-5206172306814984~8472527281</string>
+    <string name="banner_ads">ca-app-pub-5206172306814984/3811744465</string>
+    <string name="interstitilal_ads">ca-app-pub-5206172306814984/7994532057</string>
 
     <string name="laporan_iklan">Laporkan iklan yg tidak sesuai syariat</string>
-    <string name="about_devs">Kitab Kuning Digital by Daarul Hijrah Technology</string>
+    <string name="about_devs">kitabkuning.id by Daarul Hijrah Technology</string>
 
     <!--information tab name-->
     <string name="information_tab1">DH Tech</string>
@@ -51,9 +51,6 @@
 
 
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
-
-
-
     <!-- SETTING -->
 
     <string-array name="prefTeksLatinSize">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<io.codetail.widget.RevealFrameLayout
+<com.google.android.material.circularreveal.CircularRevealFrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -18,6 +18,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Banner Iklan(ads) / Pengumuman (announcement)"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit ="marquee_forever"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:scrollHorizontally="true"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:background="@color/white"
+                    android:padding="6dp"/>
 
                 <com.synnapps.carouselview.CarouselView
                     android:id="@+id/carouselView"
@@ -64,7 +79,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:adUnitId="@string/banner_ads"
-                    app:adSize="SMART_BANNER" />
+                    app:adSize="BANNER"/>
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -142,4 +157,4 @@
 
 
     </FrameLayout>
-</io.codetail.widget.RevealFrameLayout>
+</com.google.android.material.circularreveal.CircularRevealFrameLayout>

@@ -47,11 +47,16 @@ import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.sackcentury.shinebuttonlib.ShineButton;
+//import com.sackcentury.shinebuttonlib.ShineButton;
+
+import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Locale;
+
+import co.ankurg.expressview.ExpressView;
+import co.ankurg.expressview.OnCheckListener;
 
 public class ActivityDetailKitabSlider extends AppCompatActivity {
 
@@ -69,7 +74,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
     public static ProgressBar progressBar;
     public static CoordinatorLayout coordinatorLayout;
 
-    public static ShineButton shineFavoriteBtn;
+    public static ExpressView shineFavoriteBtn;
 
     private static String searchedText ;
 
@@ -113,7 +118,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
             mAdViewBottom.setVisibility(View.GONE);
         }else {
             mAdViewBottom.setVisibility(View.VISIBLE);
-            mAdViewBottom.loadAd(new AdRequest.Builder().addTestDevice(Config.TEST_DEVICE).build());
+            mAdViewBottom.loadAd(new AdRequest.Builder().build());
         }
 
         invalidateOptionsMenu();
@@ -197,8 +202,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
 
             NestedScrollView scroller = (NestedScrollView) rootView.findViewById(R.id.sclDetail);
 
-
-            shineFavoriteBtn = (ShineButton) rootView.findViewById(R.id.shine_favorite_btn);
+            shineFavoriteBtn = (ExpressView) rootView.findViewById(R.id.likeButton);
 
 
             if (scroller != null) {
@@ -259,45 +263,54 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
 
                 if(favorite==1){
                     shineFavoriteBtn.setChecked(true);
-//                    shineFavoriteBtn.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//                            dataSource.open();
-//                            dataSource.updateFavorite(ID_KITAB,0);
-//                            Log.e("Favorite","ID - "+ID_KITAB);
-//                            Toast.makeText(getContext(), "remove from favorite", Toast.LENGTH_SHORT).show();
-//                            favorite = 0;
-//                            shineFavoriteBtn.setChecked(false);
-//                            dataSource.close();
-//                        }
-//                    });
-
                 }
 
-                shineFavoriteBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        dataSource.open();
-                        if(favorite==0){
-                            dataSource.updateFavorite(ID_KITAB,1);
+                  shineFavoriteBtn.setOnCheckListener(new OnCheckListener() {
+                      @Override
+                      public void onChecked(@Nullable ExpressView expressView) {
+                          dataSource.open();
+                          dataSource.updateFavorite(ID_KITAB,1);
                             Log.e("Favorite","ID - "+ID_KITAB+" - ");
                             Toast.makeText(getContext(), "add to favorite", Toast.LENGTH_SHORT).show();
                             favorite = 1;
-//                            shineFavoriteBtn.setChecked(true);
-                        }else {
+                            shineFavoriteBtn.setChecked(true);
+                            dataSource.close();
+                      }
+
+                      @Override
+                      public void onUnChecked(@Nullable ExpressView expressView) {
+                          dataSource.open();
                             dataSource.updateFavorite(ID_KITAB,0);
                             Log.e("Favorite","ID - "+ID_KITAB+" - ");
                             Toast.makeText(getContext(), "remove from favorite", Toast.LENGTH_SHORT).show();
                             favorite = 0;
-//                            shineFavoriteBtn.setChecked(false);
-                        }
-                        dataSource.close();
-                    }
-                });
+                            shineFavoriteBtn.setChecked(false);
+                            dataSource.close();
+                      }
+                  });
 
-//                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-//                StringBuilder builder = new StringBuilder();
+//                shineFavoriteBtn.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//
+//                        dataSource.open();
+//                        if(favorite==0){
+//                            dataSource.updateFavorite(ID_KITAB,1);
+//                            Log.e("Favorite","ID - "+ID_KITAB+" - ");
+//                            Toast.makeText(getContext(), "add to favorite", Toast.LENGTH_SHORT).show();
+//                            favorite = 1;
+//                            shineFavoriteBtn.setChecked(true);
+//                        }else {
+//                            dataSource.updateFavorite(ID_KITAB,0);
+//                            Log.e("Favorite","ID - "+ID_KITAB+" - ");
+//                            Toast.makeText(getContext(), "remove from favorite", Toast.LENGTH_SHORT).show();
+//                            favorite = 0;
+//                            shineFavoriteBtn.setChecked(false);
+//                        }
+//                        dataSource.close();
+//                    }
+//                });
+
 
                 final SharedPreferences mSharedPreference= PreferenceManager.getDefaultSharedPreferences(getActivity());
                 String FontArab = mSharedPreference.getString("prefFontArab", "noorehira.ttf");
@@ -417,6 +430,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                                     Log.e("TTS", "Initilization Failed!");
                                 }
                             }
+
                         });
                     }
                 });
@@ -436,9 +450,8 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                                 ">> Kitab - *"+getContext().getString(R.string.app_name)+"*\n\n"+
                                         "*Website* - https://apps.daarulhijrah.com/apps/" + urlWeb + "\n\n" +
                                         "*Playstore* - https://play.google.com/store/apps/details?id=" + getContext().getPackageName()+"\n\n"+
-
-                                        JUDUL_INDONESIA + "\n\n" +
                                         JUDUL_ARAB + "\n\n" +
+                                        JUDUL_INDONESIA + "\n\n" +
                                         Html.fromHtml(ISI_ARAB).toString() + "\n"
 
                         );
@@ -460,36 +473,14 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                                 ISI_INDONESIA+"\n\n"+
                                 "Silakan Edit Bagian mana yang salah";
 
-//                        Intent email = new Intent(Intent.ACTION_SENDTO);
-//                        email.setType("text/html");
-//                        email.putExtra(Intent.EXTRA_EMAIL, new String[]{getResources().getString(R.string.app_email)});
-//                        email.putExtra(Intent.EXTRA_SUBJECT, subject);
-//                        email.putExtra(Intent.EXTRA_TEXT, message);
-//                        email.setData(Uri.parse("mailto:" + getResources().getString(R.string.app_email)));
-//                        // need this to prompts email client only
-////                        email.setType("message/rfc822");
-//
-//                        startActivity(Intent.createChooser(email, "Choose an Email client"));
-
-//                        Intent intent = new Intent(Intent.ACTION_SENDTO); // it's not ACTION_SEND
-//                        intent.putExtra(Intent.EXTRA_SUBJECT, "Subject of email");
-//                        intent.putExtra(Intent.EXTRA_TEXT, "Body of email");
-//                        intent.setData(Uri.parse("mailto:default@recipient.com")); // or just "mailto:" for blank
-//                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // this will make such that when user returns to your app, your app is displayed, instead of the email app.
-//                        startActivity(intent);
-
-//                        String subject = JUDUL_INDONESIA;
-//                        String message = JUDUL_ARAB;
-
-                        Intent email = new Intent(Intent.ACTION_SEND);
+                        Intent email = new Intent(Intent.ACTION_SEND, Uri.parse("mailto:" + getResources().getString(R.string.app_email)));
+                        email.setData(Uri.parse("mailto:"));
                         email.putExtra(Intent.EXTRA_EMAIL, new String[]{getResources().getString(R.string.app_email)});
                         email.putExtra(Intent.EXTRA_SUBJECT, subject);
                         email.putExtra(Intent.EXTRA_TEXT, message);
-                        email.setType("text/html");
 
                         // need this to prompts email client only
-//                        email.setType("message/rfc822");
-
+                        email.setType("message/rfc822");
                         startActivity(Intent.createChooser(email, "Choose an Email client"));
                     }
                 });
@@ -539,7 +530,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                     return true;
             }
 
-
+//            Log.e("TTS", tts.isSpeaking()+"");
         }
         return false;
     }

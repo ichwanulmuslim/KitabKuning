@@ -46,7 +46,7 @@ import com.daarulhijrah.kitabkuning.R;
 import com.daarulhijrah.kitabkuning.Utilities.Config;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
@@ -145,7 +145,7 @@ public class ActivityGridViewList extends AppCompatActivity {
             mAdView.setVisibility(View.GONE);
         }else {
             mAdView.setVisibility(View.VISIBLE);
-            mAdView.loadAd(new AdRequest.Builder().addTestDevice(Config.TEST_DEVICE).build());
+            mAdView.loadAd(new AdRequest.Builder().build());
         }
     }
 

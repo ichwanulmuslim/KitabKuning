@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         app:adUnitId="@string/banner_ads"
         android:layout_alignParentBottom="true"
-        app:adSize="SMART_BANNER" />
+        app:adSize="BANNER" />
 
     <ProgressBar
         android:id="@+id/prgLoading"
