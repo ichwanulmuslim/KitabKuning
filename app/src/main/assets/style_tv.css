@@ -28,10 +28,17 @@ h1 {
   src:url('traditional_arabic.ttf');
 }
 
+@font-face {
+  font-family: 'arab_kemenag';
+  src:url('arab_kemenag.ttf');
+}
+
 
 h2 {
+  font-weight: normal;
   font-size: 68px;
   text-align: right;
+  line-height: 2.0;
   direction: rtl;
 }
 

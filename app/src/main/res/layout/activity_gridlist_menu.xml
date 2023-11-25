@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"
-        android:layout_above="@+id/adView"
+        android:layout_above="@+id/ad_view_container"
         android:divider="@null"
         android:numColumns="1"
         android:visibility="visible"
@@ -28,13 +28,12 @@
         android:scrollbarStyle="insideOverlay"
         android:fastScrollEnabled="true"/>
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
+    <FrameLayout
+        android:id="@+id/ad_view_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:adUnitId="@string/banner_ads"
-        android:layout_alignParentBottom="true"
-        app:adSize="BANNER" />
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true" />
 
     <ProgressBar
         android:id="@+id/prgLoading"

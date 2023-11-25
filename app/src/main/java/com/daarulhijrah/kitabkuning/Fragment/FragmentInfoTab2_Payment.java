@@ -41,7 +41,7 @@ public class FragmentInfoTab2_Payment extends Fragment {
 
         webview.setWebViewClient(new myWebClient());
 //        webview.loadUrl("file:///android_asset/html/payment.html");
-        webview.loadUrl("https://ichwanulmuslim.com/kitab/payment.html");
+        webview.loadUrl("https://kitabkuning.id/apps/html/tab2.html");
 
         webview.setOnKeyListener(new OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {

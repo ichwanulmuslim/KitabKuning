@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,7 +13,8 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ad_view_container">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,30 +67,13 @@
                     android:padding="5dp"
                     android:scrollbars="none"/>
 
-                <TextView
-                    android:id="@+id/tv_iklan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ads/Iklan"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:background="@color/white"
-                    android:padding="2dp"/>
-
-                <FrameLayout
-                    android:id="@+id/ad_view_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    />
 
                 <com.google.android.gms.ads.AdView
                     android:id="@+id/adView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:adUnitId="@string/banner_ads"
-                    app:adSize="SMART_BANNER" />
+                    app:adSize="BANNER" />
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -166,7 +150,12 @@
 
 
         </ScrollView>
+        <FrameLayout
+            android:id="@+id/ad_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="false"
+            android:layout_alignParentBottom="true" />
 
-
-    </FrameLayout>
+    </RelativeLayout>
 </com.google.android.material.circularreveal.CircularRevealFrameLayout>

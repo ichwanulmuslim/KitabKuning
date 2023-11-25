@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">At-Tibyan Imam Nawawi</string>
-    <string name="app_description">Fi Adabi Hamalatil Qur`an</string>
+    <string name="app_name">Syamail Muhammadiyah</string>
+    <string name="app_description">Imam Abu Isa At-Tirmidzi</string>
 
     <string name="menu_search">Masukkan kata</string>
 
@@ -11,16 +11,19 @@
     <string name="no_internet">No internet connection</string>
     <string name="not_found">Data tidak ditemukan</string>
 
-    <string name="app_id">ca-app-pub-5206172306814984~8472527281</string>
-    <string name="banner_ads">ca-app-pub-5206172306814984/3811744465</string>
-    <string name="interstitilal_ads">ca-app-pub-5206172306814984/7994532057</string>
+    <string name="app_id">ca-app-pub-5206172306814984~2657994450</string>
+    <string name="banner_ads">ca-app-pub-5206172306814984/3111881099</string>
+    <string name="interstitilal_ads">ca-app-pub-5206172306814984/9031831110</string>
+
+<!--    <string name="banner_ads">ca-app-pub-3940256099942544/6300978111</string>-->
+    <string name="banner_ads_">ca-app-pub-3940256099942544/6300978111</string>
 
     <string name="laporan_iklan">Laporkan iklan yg tidak sesuai syariat</string>
     <string name="about_devs">kitabkuning.id by Daarul Hijrah Technology</string>
 
     <!--information tab name-->
     <string name="information_tab1">DH Tech</string>
-    <string name="information_tab2">Donasi</string>
+    <string name="information_tab2">Kitabkuning.id</string>
     <string name="information_tab3">Hubungi Kami</string>
     <string name="information_tab4">Transaksi</string>
 
@@ -97,6 +100,7 @@
         <item name="medium">Noorehira</item>
         <item name="large">Quran Majeed</item>
         <item name="xlarge">Traditional Arabic</item>
+        <item name="xxlarge">Arab Utsmani</item>
     </string-array>
 
     <string-array name="prefKontenFontCSS">
@@ -105,6 +109,7 @@
         <item name="medium">font_noorehira.css</item>
         <item name="large">font_quran_majeed.css</item>
         <item name="xlarge">font_trad_arabic.css</item>
+        <item name="xxlarge">font_arab_kemenag.css</item>
     </string-array>
 
 
@@ -121,6 +126,7 @@
         <item name="noorehira">Noorehira</item>
         <item name="quran_majeed">Quran Majeed</item>
         <item name="trad_arabic">Traditional Arabic</item>
+        <item name="arab_kemenag">Arab Kemenag</item>
     </string-array>
 
     <string-array name="prefTeksArabValue">
@@ -128,6 +134,7 @@
         <item name="noorehira">noorehira.ttf</item>
         <item name="quran_majeed">quran_majeed.ttf</item>
         <item name="trad_arabic">traditional_arabic.ttf</item>
+        <item name="arab_kemenag">arab_kemenag.ttf</item>
     </string-array>
 
     <string-array name="prefTeksLatin">

@@ -16,11 +16,14 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -49,6 +52,7 @@ import com.daarulhijrah.kitabkuning.Utilities.Config;
 import com.daarulhijrah.kitabkuning.Utilities.RecyclerItemClickListener;
 import com.daarulhijrah.kitabkuning.Utilities.UtilitiyGridView;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
@@ -65,7 +69,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-
+import java.util.Objects;
 
 
 /**
@@ -85,7 +89,6 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
     RequestQueue requestQueue;
     public static ArrayList<PromotionSlide> dataPromotionSlide = new ArrayList<PromotionSlide>();
     private static ArrayList<MenuAwal> dataMenuAwal = new ArrayList<MenuAwal>();
-    private AdView mAdView;
 
     RecyclerView recyclerView;
     AdapterTokoMitra recyclerAdapterTokoMitra;
@@ -103,7 +106,8 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
     LinearLayoutManager layoutChannelYoutube;
 
     TextView textViewChannel, textAdsIklan;
-
+    private FrameLayout adContainerView;
+    private AdView adView;
 
 
 
@@ -144,7 +148,15 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
         textViewChannel = (TextView) rootView.findViewById(R.id.nama_channel_kitab);
         textViewChannel.setText("Ngaji Kitab "+getResources().getString(R.string.app_name));
 
-        textAdsIklan = (TextView) rootView.findViewById(R.id.tv_iklan);
+        adContainerView = rootView.findViewById(R.id.ad_view_container);
+        // Since we're loading the banner based on the adContainerView size, we need to wait until this
+        // view is laid out before we can get the width.
+        adContainerView.post(new Runnable() {
+            @Override
+            public void run() {
+                loadBanner();
+            }
+        });
 
         loadAds();
 
@@ -161,15 +173,6 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
         }else{
             carouselView.setPageCount(2);
             carouselView.setImageListener(imageListener2);
-        }
-
-        mAdView = (AdView) rootView.findViewById(R.id.adView);
-        if(!isOnline()){
-            mAdView.setVisibility(View.GONE);
-            textAdsIklan.setVisibility(View.GONE);
-        }else {
-            mAdView.setVisibility(View.VISIBLE);
-            mAdView.loadAd(new AdRequest.Builder().build());
         }
 
         layoutTokoMitra = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
@@ -415,7 +418,11 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
     }
 
     public void displayInterstitial() {
-            mInterstitial.show(getActivity());
+        try {
+            mInterstitial.show(this.requireActivity());
+        }catch (Exception e) {
+
+        }
     }
 
 
@@ -554,6 +561,67 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
 
         requestQueue.add(req);
 
+    }
+
+    /** Called when leaving the activity */
+    @Override
+    public void onPause() {
+        if (adView != null) {
+            adView.pause();
+        }
+        super.onPause();
+    }
+
+    /** Called when returning to the activity */
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (adView != null) {
+            adView.resume();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+        super.onDestroy();
+    }
+
+    private void loadBanner() {
+        // Create an ad request.
+        adView = new AdView(getActivity());
+        adView.setAdUnitId(getResources().getString(R.string.banner_ads));
+        adContainerView.removeAllViews();
+        adContainerView.addView(adView);
+
+        AdSize adSize = getAdSize();
+        adView.setAdSize(adSize);
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Start loading the ad in the background.
+        adView.loadAd(adRequest);
+    }
+
+    private AdSize getAdSize() {
+        // Determine the screen width (less decorations) to use for the ad width.
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+
+        float density = outMetrics.density;
+
+        float adWidthPixels = adContainerView.getWidth();
+
+        // If the ad hasn't been laid out, default to the full screen width.
+        if (adWidthPixels == 0) {
+            adWidthPixels = outMetrics.widthPixels;
+        }
+
+        int adWidth = (int) (adWidthPixels / density);
+        return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(getActivity(), adWidth);
     }
 
 

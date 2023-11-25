@@ -3,6 +3,7 @@ package com.daarulhijrah.kitabkuning.Fragment;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.view.KeyEvent;
@@ -34,6 +35,8 @@ public class FragmentInfoTab3_ContactUs extends Fragment {
         emailBody = (EditText) rootView.findViewById(R.id.body);
 
         Button btnSend = (Button) rootView.findViewById(R.id.send);
+        Button btnChatWa = (Button) rootView.findViewById(R.id.button_whatsapp);
+
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,6 +52,15 @@ public class FragmentInfoTab3_ContactUs extends Fragment {
                 email.setType("message/rfc822");
 
                 startActivity(Intent.createChooser(email, "Choose an Email client"));
+            }
+        });
+
+        btnChatWa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("https://wa.me/6287878697644?text=Melaporkan%20Issue%20pada%20Aplikasi%20"+getResources().getString(R.string.app_name));
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         });
 
@@ -68,7 +80,7 @@ public class FragmentInfoTab3_ContactUs extends Fragment {
 
         webview.setWebViewClient(new myWebClient());
 //        webview.loadUrl("file:///android_asset/html/contact_us.html");
-        webview.loadUrl("https://ichwanulmuslim.com/kitab/contact_us.html");
+        webview.loadUrl("https://kitabkuning.id/apps/html/tab3.html");
 
         webview.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {

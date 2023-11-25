@@ -1,5 +1,6 @@
 package com.daarulhijrah.kitabkuning.Adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,7 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.cardview.widget.CardView;
 
 import com.daarulhijrah.kitabkuning.Model.Kitab;
 import com.daarulhijrah.kitabkuning.R;
@@ -44,6 +48,7 @@ public class AdapterGridViewIsiKitab extends BaseAdapter {
 			return 0;
 		}
 
+		@SuppressLint("ResourceAsColor")
 		public View getView(int position, View convertView, ViewGroup parent) {
 
 			ViewHolder holder;
@@ -58,12 +63,14 @@ public class AdapterGridViewIsiKitab extends BaseAdapter {
 			}else{
 				holder = (ViewHolder) convertView.getTag();
 			}
-			
+
+			holder.cardView = (CardView) convertView.findViewById(R.id.card_view_list_kitab);
+			holder.linearLayout = (LinearLayout) convertView.findViewById(R.id.linear_layout_list_kitab);
 			holder.tvJudulArab = (TextView) convertView.findViewById(R.id.txt_judul_arab);
 			holder.tcJudulIndonesia = (TextView) convertView.findViewById(R.id.txt_judul_indonesia);
 
 			final SharedPreferences mSharedPreference= PreferenceManager.getDefaultSharedPreferences(activity);
-			String FontArab = mSharedPreference.getString("prefFontArab", "noorehira.ttf");
+			String FontArab = mSharedPreference.getString("prefFontArab", "arab_kemenag.ttf");
 			String FontLatin = mSharedPreference.getString("prefFontLatin", "nefel_adeti.ttf");
 			String sizeFontLatin = mSharedPreference.getString("prefFontLatinSize", "18");
 			String sizeFontArab = mSharedPreference.getString("prefFontArabSize", "22");
@@ -82,12 +89,23 @@ public class AdapterGridViewIsiKitab extends BaseAdapter {
 
 			holder.tvJudulArab.setText(idList+"-"+kitabArrayList.get(position).getJudulArab());
 			holder.tcJudulIndonesia.setText(idList+"-"+kitabArrayList.get(position).getJudulIndonesia());
-//
+//			holder.tcJudulIndonesia.setTextColor(R.color.blue);
+			//				holder.cardView.setCardBackgroundColor(R.color.green);
+//			if(kitabArrayList.get(position).getJudulIndonesia().contains("Bab ")) {
+//				holder.linearLayout.setBackgroundColor(R.color.darkGreen);
+//				holder.tvJudulArab.setTextColor(R.color.white);
+//				holder.tcJudulIndonesia.setTextColor(R.color.blue);
+//			}
+
+
+
 			return convertView;
 		}
 		
 		static class ViewHolder {
 			TextView tvJudulArab, tcJudulIndonesia;
+			CardView cardView;
+			LinearLayout linearLayout;
 
 		}
 		

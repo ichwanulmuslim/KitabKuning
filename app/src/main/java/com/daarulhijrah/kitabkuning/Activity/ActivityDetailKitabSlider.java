@@ -1,7 +1,9 @@
 package com.daarulhijrah.kitabkuning.Activity;
 
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -25,15 +27,19 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.text.Html;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -46,13 +52,19 @@ import com.daarulhijrah.kitabkuning.Utilities.Config;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 //import com.sackcentury.shinebuttonlib.ShineButton;
 
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
 
 import co.ankurg.expressview.ExpressView;
@@ -81,10 +93,11 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
     static int idKitab;
     static String judulArab, judulIndonesia, isiArab, isiIndonesia, urlGambar, urlAudio;
     static int favorite, recent;
-
-    private static AdView mAdViewBottom;
-
     private static TextToSpeech tts;
+    public static int id_tabel;
+
+    private FrameLayout adContainerView;
+    private AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +111,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
         dataSource.close();
 
         Intent iGet = getIntent();
-        int id_tabel = iGet.getIntExtra("id_tabel", 0);
+        id_tabel = iGet.getIntExtra("id_tabel", 0);
         searchedText = iGet.getStringExtra("text_cari");
         Log.e("cari luar",searchedText +" - "+id_tabel);
 
@@ -113,15 +126,29 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setCurrentItem(id_tabel);
 
-        mAdViewBottom = (AdView) findViewById(R.id.adViewBottom);
-        if(!isOnline(getApplicationContext())){
-            mAdViewBottom.setVisibility(View.GONE);
-        }else {
-            mAdViewBottom.setVisibility(View.VISIBLE);
-            mAdViewBottom.loadAd(new AdRequest.Builder().build());
-        }
-
         invalidateOptionsMenu();
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+        });
+
+        // Set your test devices. Check your logcat output for the hashed device ID to
+        // get test ads on a physical device. e.g.
+        // "Use RequestConfiguration.Builder().setTestDeviceIds(Arrays.asList("ABCDEF012345"))
+        // to get test ads on this device."
+        MobileAds.setRequestConfiguration(
+                new RequestConfiguration.Builder().setTestDeviceIds(Arrays.asList("ABCDEF012345")).build());
+
+        adContainerView = findViewById(R.id.ad_view_container);
+        // Since we're loading the banner based on the adContainerView size, we need to wait until this
+        // view is laid out before we can get the width.
+        adContainerView.post(new Runnable() {
+            @Override
+            public void run() {
+                loadBanner();
+            }
+        });
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -179,17 +206,16 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
 
             Intent iGet = getActivity().getIntent();
             searchedText = iGet.getStringExtra("text_cari");
-            Log.e("cari dalem",searchedText);
+            Log.e("cari dalem",searchedText+" - "+id_tabel);
 
-            final Toolbar toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
-            ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
             final ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
             if (actionBar != null) {
+
                 ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             }
 
-            imgGambar = (ImageView) rootView.findViewById(R.id.img_frag_detail_kitab_gambar);
+//            imgGambar = (ImageView) rootView.findViewById(R.id.img_frag_detail_kitab_gambar);
 
             tvJudulArab = (TextView) rootView.findViewById(R.id.tv_frag_detail_kitab_judul_arab);
             tvJudulIndonesia = (TextView) rootView.findViewById(R.id.tv_frag_detail_kitab_judul_indonesia);
@@ -289,36 +315,13 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                       }
                   });
 
-//                shineFavoriteBtn.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//
-//                        dataSource.open();
-//                        if(favorite==0){
-//                            dataSource.updateFavorite(ID_KITAB,1);
-//                            Log.e("Favorite","ID - "+ID_KITAB+" - ");
-//                            Toast.makeText(getContext(), "add to favorite", Toast.LENGTH_SHORT).show();
-//                            favorite = 1;
-//                            shineFavoriteBtn.setChecked(true);
-//                        }else {
-//                            dataSource.updateFavorite(ID_KITAB,0);
-//                            Log.e("Favorite","ID - "+ID_KITAB+" - ");
-//                            Toast.makeText(getContext(), "remove from favorite", Toast.LENGTH_SHORT).show();
-//                            favorite = 0;
-//                            shineFavoriteBtn.setChecked(false);
-//                        }
-//                        dataSource.close();
-//                    }
-//                });
-
-
                 final SharedPreferences mSharedPreference= PreferenceManager.getDefaultSharedPreferences(getActivity());
-                String FontArab = mSharedPreference.getString("prefFontArab", "noorehira.ttf");
-                String FontLatin = mSharedPreference.getString("prefFontLatin", "nefel_adeti.ttf");
+                String FontArab = mSharedPreference.getString("prefFontArab", "arab_kemenag.ttf");
+                String FontLatin = mSharedPreference.getString("prefFontLatin", "arab_kemenag.ttf");
                 String sizeFontLatin = mSharedPreference.getString("prefFontLatinSize", "20");
                 String sizeFontArab = mSharedPreference.getString("prefFontArabSize", "18");
                 String sizeKonten = mSharedPreference.getString("prefKontenSize", "style.css");
-                String sizeKontenFont = mSharedPreference.getString("prefKontenFont", "font_nefel_adeti.css");
+                String sizeKontenFont = mSharedPreference.getString("prefKontenFont", "font_arab_kemenag.css");
 
                 Log.e("String","Arab : "+searchedText+" - "+FontArab+", Latin : "+FontLatin+", Size Latin: "+sizeFontLatin+", Size Arab: "+sizeFontArab + sizeKontenFont);
 
@@ -349,24 +352,24 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                 int fontSize = res.getInteger(R.integer.font_size);
                 webSettings.setDefaultFontSize(fontSize);
 
-//                wvIsiArab.setWebViewClient(new WebViewClient(){
-//                    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-//                    @Override
-//                    public void onPageFinished(WebView view, String url) {
-//                        wvIsiArab.findAllAsync(searchedText);
-//                    }
-//                });
+                wvIsiArab.setWebViewClient(new WebViewClient(){
+                    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+                    @Override
+                    public void onPageFinished(WebView view, String url) {
+                        wvIsiArab.findAllAsync(searchedText);
+                    }
+                });
 
-//                try{
-//                    Method m = WebView.class.getMethod("findAllAsync", new Class<?>[]{String.class});
-//                    m.invoke(wvIsiArab, searchedText);
-//                } catch(Throwable notIgnored){
-//                    wvIsiArab.findAllAsync(searchedText);
-//                    try {
-//                        Method m = WebView.class.getMethod("setFindIsUp", Boolean.TYPE);
-//                        m.invoke(wvIsiArab, true);
-//                    } catch (Throwable ignored){}
-//                }
+                try{
+                    Method m = WebView.class.getMethod("findAllAsync", new Class<?>[]{String.class});
+                    m.invoke(wvIsiArab, searchedText);
+                } catch(Throwable notIgnored){
+                    wvIsiArab.findAllAsync(searchedText);
+                    try {
+                        Method m = WebView.class.getMethod("setFindIsUp", Boolean.TYPE);
+                        m.invoke(wvIsiArab, true);
+                    } catch (Throwable ignored){}
+                }
 
 
                 final String JUDUL_ARAB = judulArab;
@@ -376,7 +379,29 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                 final String URL_GAMBAR = urlGambar;
                 final String URL_AUDIO = urlAudio;
 
+                FloatingActionButton flBack = (FloatingActionButton) rootView.findViewById(R.id.fab_back);
+                flBack.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        idKitab = idKitab -1;
 
+                        dataSource.open();
+                        dataSource.resetRecent();
+                        dataSource.updateRecent(idKitab,1);
+                        Log.e("RECENT","ID - "+idKitab+" - Menu ID (KDMHS) : ");
+                        if(recent==0){
+
+                            Log.e("Favorite","ID - "+recent);
+                            Toast.makeText(getActivity(), "add to recent", Toast.LENGTH_SHORT).show();
+                            getActivity().finish();
+                        }
+                        else {
+                            getActivity().finish();
+                        }
+                        dataSource.close();
+
+                    }
+                });
 
 
                 FloatingActionMenu flMenu = (FloatingActionMenu) rootView.findViewById(R.id.fl_menu);
@@ -448,7 +473,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                         sendIntent.setAction(Intent.ACTION_SEND);
                         sendIntent.putExtra(Intent.EXTRA_TEXT,
                                 ">> Kitab - *"+getContext().getString(R.string.app_name)+"*\n\n"+
-                                        "*Website* - https://apps.daarulhijrah.com/apps/" + urlWeb + "\n\n" +
+                                        "*Website* - https://kitabkuning.id/apps/" + urlWeb + "\n\n" +
                                         "*Playstore* - https://play.google.com/store/apps/details?id=" + getContext().getPackageName()+"\n\n"+
                                         JUDUL_ARAB + "\n\n" +
                                         JUDUL_INDONESIA + "\n\n" +
@@ -542,6 +567,69 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
             tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
         }
     }
+
+    /** Called when leaving the activity */
+    @Override
+    public void onPause() {
+        if (adView != null) {
+            adView.pause();
+        }
+        super.onPause();
+    }
+
+    /** Called when returning to the activity */
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (adView != null) {
+            adView.resume();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+        super.onDestroy();
+    }
+
+    private void loadBanner() {
+        // Create an ad request.
+        adView = new AdView(this);
+        adView.setAdUnitId(getResources().getString(R.string.banner_ads));
+        adContainerView.removeAllViews();
+        adContainerView.addView(adView);
+
+        AdSize adSize = getAdSize();
+        adView.setAdSize(adSize);
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Start loading the ad in the background.
+        adView.loadAd(adRequest);
+    }
+
+    private AdSize getAdSize() {
+        // Determine the screen width (less decorations) to use for the ad width.
+        Display display = getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+
+        float density = outMetrics.density;
+
+        float adWidthPixels = adContainerView.getWidth();
+
+        // If the ad hasn't been laid out, default to the full screen width.
+        if (adWidthPixels == 0) {
+            adWidthPixels = outMetrics.widthPixels;
+        }
+
+        int adWidth = (int) (adWidthPixels / density);
+        return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth);
+    }
+
+
 
 
 

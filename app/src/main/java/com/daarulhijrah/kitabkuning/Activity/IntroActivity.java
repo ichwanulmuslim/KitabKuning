@@ -108,7 +108,7 @@ public class IntroActivity extends AppCompatActivity {
                                             @Nullable TextView description) {
                         if (position == 0) {
                             Glide.with(image.getContext())
-                                    .load(R.drawable.icon512)
+                                    .load(R.drawable.intro_dhtech)
                                     .into(image);
                         }
 
