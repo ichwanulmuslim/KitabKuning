@@ -10,6 +10,14 @@
             android:summary="Set Path Aplikasi"
             android:key="prefPathAplikasi"/>
 
+        <ListPreference
+            android:key="prefTheme"
+            android:entries="@array/isDarkModeOn"
+            android:summary="@string/ket_theme"
+            android:entryValues="@array/isDarkModeOnValue"
+            android:title="Set Theme (Light/Dark) Mode"
+            />
+
         <ListPreference 
             android:key="prefFontArab"
             android:entries="@array/prefTeksArab"

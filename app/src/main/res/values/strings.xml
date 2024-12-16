@@ -1,22 +1,23 @@
 <resources>
-    <string name="app_name">Syamail Muhammadiyah</string>
-    <string name="app_description">Imam Abu Isa At-Tirmidzi</string>
+    <string name="app_name">Bidayatul Hidayah</string>
+    <string name="app_description">Imam Abu Hamid, Al-Ghazali</string>
 
     <string name="menu_search">Masukkan kata</string>
 
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
     <string name="action_settings">Settings</string>
+    <string name="action_dark_mode">Dark Mode</string>
+    <string name="action_intro">Introduction</string>
 
     <string name="no_internet">No internet connection</string>
     <string name="not_found">Data tidak ditemukan</string>
 
-    <string name="app_id">ca-app-pub-5206172306814984~2657994450</string>
-    <string name="banner_ads">ca-app-pub-5206172306814984/3111881099</string>
-    <string name="interstitilal_ads">ca-app-pub-5206172306814984/9031831110</string>
+    <string name="app_id">ca-app-pub-5206172306814984~6200759302</string>
+    <string name="banner_ads">ca-app-pub-5206172306814984/3554414668</string>
+    <string name="interstitilal_ads">ca-app-pub-5206172306814984/7978258298</string>
 
-<!--    <string name="banner_ads">ca-app-pub-3940256099942544/6300978111</string>-->
-    <string name="banner_ads_">ca-app-pub-3940256099942544/6300978111</string>
+<!--    <string name="banner_ads_">ca-app-pub-3940256099942544/6300978111</string>-->
 
     <string name="laporan_iklan">Laporkan iklan yg tidak sesuai syariat</string>
     <string name="about_devs">kitabkuning.id by Daarul Hijrah Technology</string>
@@ -119,6 +120,7 @@
     <string name="ket_fontlatin">Choose Latin Font</string>
     <string name="ket_fontlatinsize">Choose Latin Font Size</string>
     <string name="ket_fontarabsize">Choose Arabic Font Size</string>
+    <string name="ket_theme">Choose Theme (Light/Dark)</string>
     <string name="ket_order">Choose Order Type</string>
 
     <string-array name="prefTeksArab">
@@ -147,5 +149,15 @@
         <item name="normal"></item>
         <item name="droidsanserif">droidsanserif_latin.ttf</item>
         <item name="nefel">nefel_adeti.ttf</item>
+    </string-array>
+
+    <string-array name="isDarkModeOn">
+        <item name="LightMode">Light Mode</item>
+        <item name="DarkMode">Dark Mode</item>
+    </string-array>
+
+    <string-array name="isDarkModeOnValue">
+        <item name="LightMode">false</item>
+        <item name="DarkMode">true</item>
     </string-array>
 </resources>

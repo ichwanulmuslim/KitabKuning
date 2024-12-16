@@ -24,7 +24,7 @@ import java.util.ArrayList;
  */
 
 public class AdapterTokoMitra extends RecyclerView.Adapter<AdapterTokoMitra.ViewHolder> {
-    Context mContext;
+    Activity mContext;
     int resourceId;
     ArrayList<TokoMitra> data = new ArrayList<TokoMitra>();
 

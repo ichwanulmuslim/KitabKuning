@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
-    compileSdkVersion 34
+    compileSdk 34
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -18,11 +19,11 @@ android {
 
 
     defaultConfig {
-        applicationId "id.kitabkuning.syamail.muhammadiyah.v2"
-        minSdkVersion 19
-        targetSdkVersion 34
-        versionCode 4
-        versionName "1.1"
+        applicationId "id.kitabkuning.islam.bidayatul.hidayah"
+        minSdkVersion 23
+        targetSdk 34
+        versionCode 7
+        versionName "2.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
@@ -33,34 +34,39 @@ android {
         }
     }
     namespace 'com.daarulhijrah.kitabkuning'
+    kotlinOptions {
+        jvmTarget = '17'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core-ktx:1.13.1'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test:runner:1.5.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    implementation 'com.google.firebase:firebase-analytics:21.3.0'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    implementation 'com.google.firebase:firebase-analytics:22.1.0'
     implementation 'com.google.firebase:firebase-core:21.1.1'
 
     implementation 'com.github.rubengees:introduction:2.0.0'
     implementation 'com.github.bumptech.glide:glide:4.15.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     implementation 'com.github.sayyam:carouselview:d46b3c394f'
     implementation 'com.android.volley:volley:1.2.1'
 
     implementation "co.ankurg.expressview:expressview:0.0.3"
 
-    implementation 'com.google.android.gms:play-services-ads:22.4.0'
+    implementation 'com.google.android.gms:play-services-ads:23.2.0'
     implementation 'com.github.clans:fab:1.6.4'
     implementation "androidx.multidex:multidex:2.0.1"
 
-    implementation platform('com.google.firebase:firebase-bom:32.3.1')
+    implementation platform('com.google.firebase:firebase-bom:33.1.2')
     implementation 'com.google.firebase:firebase-analytics'
+
 
 
 }

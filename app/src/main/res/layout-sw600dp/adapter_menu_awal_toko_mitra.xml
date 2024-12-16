@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:background="@color/cardBackground"
             android:orientation="vertical" >
 
             <ImageView
@@ -32,6 +33,7 @@
                 android:paddingTop="5dp"
                 android:gravity="center_horizontal"
                 android:lines="2"
+                android:textColor="@color/mainText"
                 android:textStyle="bold"
                 android:textSize="24sp" />
 
@@ -41,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:layout_marginBottom="5dp"
+                android:textColor="@color/mainText"
                 android:lines="1"
                 android:textSize="20sp" />
 

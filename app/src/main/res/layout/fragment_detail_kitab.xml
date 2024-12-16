@@ -2,13 +2,14 @@
 <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:card_view="http://schemas.android.com/tools"
+    android:background="@color/mainBackground"
 android:layout_width="match_parent"
 android:layout_height="match_parent">
 
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:id="@+id/main_content"
     android:visibility="visible"
-    android:background="#e7e7e7"
+    android:background="@color/mainBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -19,6 +20,12 @@ android:layout_height="match_parent">
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         >
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -33,95 +40,78 @@ android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/mainBackground"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv0"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                card_view:cardBackgroundColor="@color/colorPrimar"
-                card_view:cardElevation="8sp"
-                app:cardBackgroundColor="@color/colorPrimary"
-                card_view:cardUseCompatPadding="true">
+                app:cardElevation="8sp"
+                app:cardBackgroundColor="@color/cardBackground"
+                app:cardUseCompatPadding="true"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/tv_frag_detail_kitab_judul_arab"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|top"
-                    android:textColor="@color/white"
+                    android:textColor="@color/mainText"
                     android:layout_margin="10dp"
-                    android:textSize="22sp"
+                    android:textSize="28sp"
                     android:gravity="center_horizontal"
                     android:text="Produk"
                     android:textStyle="bold" />
 
-
-
             </androidx.cardview.widget.CardView>
-
-
-            <TextView
-                android:id="@+id/idescka"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:textSize="4sp" />
-
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cv"
+                android:id="@+id/cv2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                card_view:cardBackgroundColor="@android:color/white"
-                card_view:cardElevation="8sp"
-                card_view:cardUseCompatPadding="true">
+                android:layout_height="match_parent"
+                app:cardElevation="8sp"
+                app:cardBackgroundColor="@color/cardBackground"
+                app:cardUseCompatPadding="true"
+                android:visibility="gone">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:background="@color/white">
-
-                    <TextView
-                        android:id="@+id/tv_frag_detail_kitab_judul_indonesia"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:layout_gravity="center|top"
-                        android:layout_marginBottom="4dp"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:textSize="20sp" />
-
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_frag_detail_kitab_judul_indonesia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:textColor="@color/mainText"
+                    android:layout_margin="10dp"
+                    android:textSize="28sp"
+                    android:gravity="center_horizontal"
+                    android:text="Produk"
+                    android:textStyle="bold" />
 
             </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:textSize="3sp" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="10dp"
-                card_view:cardBackgroundColor="@android:color/white"
-                card_view:cardElevation="8sp"
-                card_view:cardUseCompatPadding="true">
+                app:cardBackgroundColor="@color/cardBackground"
+                app:cardElevation="8sp"
+                app:cardUseCompatPadding="true">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@color/white">
+                    android:background="@color/cardBackground">
 
                     <WebView
                         android:id="@+id/wv_fragment_detail_kitab_isi_arab"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/mainBackground"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:forceDarkAllowed="true"
                         android:scrollbars="none" />
 
                 </RelativeLayout>
@@ -133,15 +123,15 @@ android:layout_height="match_parent">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="10dp"
-                card_view:cardBackgroundColor="@android:color/white"
-                card_view:cardElevation="8sp"
-                card_view:cardUseCompatPadding="true">
+                app:cardBackgroundColor="@color/cardBackground"
+                app:cardElevation="8sp"
+                app:cardUseCompatPadding="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@color/white">
+                    android:background="@color/mainBackground">
 
                     <WebView
                         android:id="@+id/wv_fragment_detail_kitab_isi_indonesia"
@@ -150,6 +140,7 @@ android:layout_height="match_parent">
                         android:layout_marginBottom="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="@color/mainBackground"
                         android:scrollbars="none" />
 
                 </LinearLayout>
@@ -172,7 +163,7 @@ android:layout_height="match_parent">
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_gravity="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/mainText"
                     android:layout_marginTop="2dp"
                     android:text="@string/laporan_iklan"/>
 
@@ -182,7 +173,7 @@ android:layout_height="match_parent">
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_gravity="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/mainText"
                     android:layout_marginTop="2dp"
                     android:text="@string/about_devs"/>
 
@@ -259,6 +250,7 @@ android:layout_height="match_parent">
         app:fab_showAnimation="@anim/fab_scale_up"
         app:fab_hideAnimation="@anim/fab_scale_down"
         app:fab_label=""
+        android:visibility="gone"
         />
 
 
@@ -276,6 +268,7 @@ android:layout_height="match_parent">
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/no_internet"
+    android:textColor="@color/mainText"
     android:textSize="14sp"
     android:visibility="gone"
     android:layout_centerInParent="true" />

@@ -214,7 +214,7 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
 
     public void menuGrid(){
         dataMenuAwal.clear();
-        dataMenuAwal.add(new MenuAwal("Daftar Isi", ContextCompat.getDrawable(getActivity(), R.drawable.icon512)));
+        dataMenuAwal.add(new MenuAwal("Daftar Isi", ContextCompat.getDrawable(getActivity(), R.drawable.ic_launcher)));
         dataMenuAwal.add(new MenuAwal("Ditandai", ContextCompat.getDrawable(getActivity(), R.drawable.menu_favorite)));
         dataMenuAwal.add(new MenuAwal("Bacaan Terakhir", ContextCompat.getDrawable(getActivity(), R.drawable.menu_recent)));
         dataMenuAwal.add(new MenuAwal("Setting", ContextCompat.getDrawable(getActivity(), R.drawable.menu_setting)));
@@ -266,7 +266,7 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
 
     private void getData(){
         String url = Config.API_URL+Config.TABEL_PROMOSI+Config.JSON_FORMAT+Config.STATUS+Config.ORDER_SLIDE_DESC;
-        Log.e("URL",url);
+        Log.i("URL",url);
 
         dataPromotionSlide.clear();
         requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());

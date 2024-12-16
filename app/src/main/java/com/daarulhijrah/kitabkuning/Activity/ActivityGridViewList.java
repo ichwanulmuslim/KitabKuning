@@ -11,6 +11,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
@@ -72,6 +73,7 @@ public class ActivityGridViewList extends AppCompatActivity {
 
     public Kitab itemKitab;
     public static DataSource dataSource;
+    public static int numberOfItemsInResp;
 
     ArrayList<Kitab> arrayListDataKitab = new ArrayList<Kitab>();
 
@@ -86,6 +88,7 @@ public class ActivityGridViewList extends AppCompatActivity {
     private FrameLayout adContainerView;
     private AdView adView;
     String prefPathAplikasi;
+    String isDarkMode;
 
 
 
@@ -113,6 +116,19 @@ public class ActivityGridViewList extends AppCompatActivity {
 
         final SharedPreferences mSharedPreference= PreferenceManager.getDefaultSharedPreferences(this);
         prefPathAplikasi = mSharedPreference.getString("prefPathAplikasi", Config.TABEL_NAMA_KITAB);
+        isDarkMode = mSharedPreference.getString("prefTheme", "false");
+        Log.d("Dark",isDarkMode);
+
+        if (isDarkMode.equals("true")) {
+            AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_YES);
+            Log.d("Dark","Disable Dark Mode");
+        }
+        else {
+            AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_NO);
+            Log.d("Dark","Enable Dark Mode");
+        }
 
         dataSource = new DataSource(this);
 
@@ -120,7 +136,8 @@ public class ActivityGridViewList extends AppCompatActivity {
         if(Category_ID==0) {
             dataSource.open();
             arrayListDataKitab = dataSource.getAllData();
-            Log.e("Total", arrayListDataKitab.size()+"");
+            Log.e("Total Kitab", arrayListDataKitab.size()+"");
+            numberOfItemsInResp = arrayListDataKitab.size();
             dataSource.close();
             if (arrayListDataKitab.isEmpty()) {
                 new AlertDialog.Builder(this)
@@ -140,7 +157,7 @@ public class ActivityGridViewList extends AppCompatActivity {
                         .setNegativeButton("Tidak", null)
                         .show();
 
-            }else {
+            } else {
                 progressBar.setVisibility(View.GONE);
                 showSearchGridView("");
             }
@@ -321,8 +338,8 @@ public class ActivityGridViewList extends AppCompatActivity {
                     Log.e("URL JSON",URL_KITAB);
                     JSONObject json = new JSONObject(response);
                     JSONArray data = json.getJSONArray(prefPathAplikasi);
-//                    Log.e("Result",data.length()+"");
-                    final int numberOfItemsInResp = data.length();
+                    Log.e("Result",data.length()+"");
+                    numberOfItemsInResp = data.length();
 
                     arrayListDataKitab.clear();
 

@@ -3,7 +3,7 @@ package com.daarulhijrah.kitabkuning.Utilities;
 public class Config {
 
     public static String API_URL = "https://get.daarulhijrah.com/api.php/";
-    public static String TABEL_NAMA_KITAB = "syamail_muhammadiyah";
+    public static String TABEL_NAMA_KITAB = "bidayatulhidayah";
     public static String TABEL_TOKO = "toko_mitra";
     public static String TABEL_PROMOSI = "PromotionSlide";
     public static String TABEL_CHANNEL_YOUTUBE = "ChannelYoutube";

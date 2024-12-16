@@ -79,7 +79,9 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
+                                                <entry key="color" value="000000" />
                                                 <entry key="imagePath" value="/private/var/folders/hc/b3zdztxd48s7l0kvdfzf3ljw0000gn/T/ic_android_black_24dp.xml" />
+                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -91,8 +93,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="$PROJECT_DIR$/../../../Data MAC/Pemrograman/Project/DHTechNew/SafinatunNajaah/app/src/main/res/drawable/icon512.png" />
-                                                <entry key="scalingPercent" value="96" />
+                                                <entry key="imagePath" value="$USER_HOME$/Downloads/alhikam.jpg" />
+                                                <entry key="scalingPercent" value="110" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -319,7 +321,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/arrow_back/baseline_arrow_back_24.xml" />
+                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/dark_mode/baseline_dark_mode_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -329,8 +331,9 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="autoMirrored" value="true" />
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="baseline_arrow_back_24" />
+                            <entry key="outputName" value="baseline_dark_mode_24" />
                           </map>
                         </option>
                       </PersistentState>

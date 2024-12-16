@@ -8,557 +8,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:fff123bcc9bfc59a87b642",
-        "android_client_info": {
-          "package_name": "com.daarulhijrah.apps"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:d1b5efe0ff943b8387b642",
-        "android_client_info": {
-          "package_name": "com.daarulhijrah.kitabkuning.akhlaqlilbanin2"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      },
-      "admob_app_id": "ca-app-pub-5206172306814984~7751918580"
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:e164fe3c00b2c11987b642",
-        "android_client_info": {
-          "package_name": "com.daarulhijrah.kitabkuning.fathulizaar"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:2f8d13f3b41ffde787b642",
-        "android_client_info": {
-          "package_name": "com.daarulhijrah.kitabkuning.shalawat"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-93h4608knlm2ddhqk0n0srn8itu1mabk.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.daarulhijrah.kitabkuning.shalawat",
-            "certificate_hash": "21b409f0eddc27a53c98de0f760f2340c02f62bd"
-          }
-        },
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:0f344f38308f9d3d87b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.attibyan.imamnawawi"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:5c9bca04394d304887b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.ayyuhalwalad.imamghazali"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:9f19a86cace01d2287b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.belajar.qiroah"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:913847ffc5b91d7e87b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.doa.islam"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:d6a74753bb95d41287b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.fiqih.durusulfiqhiyyah1"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:aa40685ee7c888e087b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.fiqih.durusulfiqhiyyah2"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:1171279c2a021ef887b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.fiqih.durusulfiqhiyyah3"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:70c2bb84f8f9b23587b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.hizb.nashr.imamhaddaad"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:34f19e17681c1b7a",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.akhlaq.lilbanin"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      },
-      "admob_app_id": "ca-app-pub-5206172306814984~7307320946"
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:fb7f32d026962ffc",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.alhikam.ibnu.athoillah"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      },
-      "admob_app_id": "ca-app-pub-5206172306814984~6687879002"
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:cc5ca49e422ddc7e",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.amtsilatut.tashrif.sharaf"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:701725015271:android:74336a3386baf1ec",
         "android_client_info": {
           "package_name": "id.kitabkuning.islam.arbain.nawawi.hadits"
@@ -584,483 +33,11 @@
         }
       ],
       "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:418c4faf0c1a1745",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.asybah.wan.nadzhooir"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:e097997cc6312d4d",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.bidayatul.hidayah"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:ed9a1412cd25dc68",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.daqaaiqul.akhbar"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:8e5877285f2ab7ab",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.fiqih.safinatunnajah"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:695c2e3d78f8340e87b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.ghoyah.wa.taqrib"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:f468aade28644f7f",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.hadits.bulghul.maram"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:644aa9554b0b3796",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.hadits.shahih.bukhori"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:48a570c4d9c0c9b8",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.jawahirul.kalamiyah.tauhid"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:c720986d15c6b845",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.kata.mutiara.mahfudzhot"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:c788c3656344865587b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.khulashoh.nurulyaqin1"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:928a787029cf8add",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.matan.jurmiyah.nahwu"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:66884879c801839d",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:e6654e6f74471790",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.nashoihud.diniyyah"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-a8v9e8pjcqa1i19i151haidl9fbvr51r.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "id.kitabkuning.islam.nashoihud.diniyyah",
-            "certificate_hash": "d5401d4193233a01d7b7ef70fa9c828475a0162a"
-          }
+        "analytics_service": {
+          "status": 1
         },
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
         "appinvite_service": {
+          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
@@ -1074,78 +51,9 @@
               }
             }
           ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:20700660e5f4f9a4",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.nashoihul.ibad"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:dc7f19d2be447f05",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.qasidah.hadrah"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
+        },
+        "ads_service": {
+          "status": 2
         }
       }
     },
@@ -1176,7 +84,11 @@
         }
       ],
       "services": {
+        "analytics_service": {
+          "status": 1
+        },
         "appinvite_service": {
+          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
@@ -1190,17 +102,28 @@
               }
             }
           ]
+        },
+        "ads_service": {
+          "status": 2
         }
       }
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:fcb2c5a94cfaddb4",
+        "mobilesdk_app_id": "1:701725015271:android:e6654e6f74471790",
         "android_client_info": {
-          "package_name": "id.kitabkuning.islam.shorof.kailani.izzi"
+          "package_name": "id.kitabkuning.islam.nashoihud.diniyyah"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "701725015271-a8v9e8pjcqa1i19i151haidl9fbvr51r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.kitabkuning.islam.nashoihud.diniyyah",
+            "certificate_hash": "d5401d4193233a01d7b7ef70fa9c828475a0162a"
+          }
+        },
         {
           "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
           "client_type": 3
@@ -1212,7 +135,11 @@
         }
       ],
       "services": {
+        "analytics_service": {
+          "status": 1
+        },
         "appinvite_service": {
+          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
@@ -1226,114 +153,9 @@
               }
             }
           ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:3c92546fe54215d6",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.sifat.duapuluh"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:25955e76c33e72d9",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.syaraful.ummah.almuhammadiyyah"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:83d3f0f7f4209c38",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.islam.taklim.mutaallim"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
+        },
+        "ads_service": {
+          "status": 2
         }
       }
     },
@@ -1356,28 +178,23 @@
         }
       ],
       "services": {
+        "analytics_service": {
+          "status": 1
+        },
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
         }
       }
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:f24bfff99c7549cb",
+        "mobilesdk_app_id": "1:701725015271:android:20700660e5f4f9a4",
         "android_client_info": {
-          "package_name": "id.kitabkuning.islam.tirmidzi.syamailmuhammadiyyah"
+          "package_name": "id.kitabkuning.islam.nashoihul.ibad"
         }
       },
       "oauth_client": [
@@ -1392,20 +209,356 @@
         }
       ],
       "services": {
+        "analytics_service": {
+          "status": 1
+        },
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:25955e76c33e72d9",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.syaraful.ummah.almuhammadiyyah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:48a570c4d9c0c9b8",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.jawahirul.kalamiyah.tauhid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:fb7f32d026962ffc",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.alhikam.ibnu.athoillah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:34f19e17681c1b7a",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.akhlaq.lilbanin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:cc5ca49e422ddc7e",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.amtsilatut.tashrif.sharaf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:f468aade28644f7f",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.hadits.bulghul.maram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:928a787029cf8add",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.matan.jurmiyah.nahwu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:ed9a1412cd25dc68",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.daqaaiqul.akhbar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:fcb2c5a94cfaddb4",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.shorof.kailani.izzi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:66884879c801839d",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.mawaidzul.usfuriyah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701725015271:android:8e5877285f2ab7ab",
+        "android_client_info": {
+          "package_name": "id.kitabkuning.islam.fiqih.safinatunnajah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
         }
       }
     },
@@ -1428,28 +581,23 @@
         }
       ],
       "services": {
+        "analytics_service": {
+          "status": 1
+        },
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
         }
       }
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:5b19d6e18c25c2bd",
+        "mobilesdk_app_id": "1:701725015271:android:f24bfff99c7549cb",
         "android_client_info": {
-          "package_name": "id.kitabkuning.kamus.arab.indonesia"
+          "package_name": "id.kitabkuning.islam.tirmidzi.syamailmuhammadiyyah"
         }
       },
       "oauth_client": [
@@ -1464,28 +612,23 @@
         }
       ],
       "services": {
+        "analytics_service": {
+          "status": 1
+        },
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
         }
       }
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:c58edd3e324275be",
+        "mobilesdk_app_id": "1:701725015271:android:e097997cc6312d4d",
         "android_client_info": {
-          "package_name": "id.kitabkuning.qasidah.burdah"
+          "package_name": "id.kitabkuning.islam.bidayatul.hidayah"
         }
       },
       "oauth_client": [
@@ -1500,308 +643,15 @@
         }
       ],
       "services": {
+        "analytics_service": {
+          "status": 1
+        },
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:eb0ac22891d9516b87b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.qasidah.shalawatnabi"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:1ce1939b505bb67387b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.rawi.adhiyaullaami"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:760400135008a37187b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.rawi.diba"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:bc26581ed5b763f287b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.shirah.khulasahnurulyaqin2"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:26ee422f45b95ce787b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.syamail.muhammadiyah.v2"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:64b26f03a23dd8f487b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.tanqihul.qaul.hadits"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:428f36e45953810487b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.tauhid.tijan.darori"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:701725015271:android:bc7b4dd2ab29945e87b642",
-        "android_client_info": {
-          "package_name": "id.kitabkuning.washiyatulmusthofa.abdulwahabsyaroni"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB_EVB1cZ4Ll02U4dKkPZSH19bsWEtnQPY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "701725015271-lordutvmkosdbua6pgc01du0ee9ci3cd.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "701725015271-a0acfi3rqa7e6kp72pg8jlh0mocdgtpr.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "id.kitabkuning.islam.mawaidzul.usfuriyah"
-              }
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
         }
       }
     }
