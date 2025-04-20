@@ -1,11 +1,15 @@
 package com.daarulhijrah.kitabkuning.Activity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -43,6 +47,20 @@ public class ActivityInformation extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
 
         viewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
+
+        final SharedPreferences mSharedPreference= PreferenceManager.getDefaultSharedPreferences(this);
+        String isDarkMode = mSharedPreference.getString("prefTheme", "false");
+
+        if (isDarkMode.equals("true")) {
+            AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_YES);
+            Log.d("Dark Atas","Disable Dark Mode");
+        }
+        else {
+            AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_NO);
+            Log.d("Dark Atas","Enable Dark Mode");
+        }
 
         tabLayout.post(new Runnable() {
             @Override

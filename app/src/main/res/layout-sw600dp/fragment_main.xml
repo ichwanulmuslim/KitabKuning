@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@color/mainBackground"
     android:layout_height="wrap_content">
 
     <RelativeLayout
@@ -25,13 +26,13 @@
                     android:layout_height="wrap_content"
                     android:text="Banner Iklan(ads) / Pengumuman (announcement)"
                     android:singleLine="true"
-                    android:textSize="24sp"
                     android:ellipsize="marquee"
                     android:marqueeRepeatLimit ="marquee_forever"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:scrollHorizontally="true"
                     android:textStyle="bold"
+                    android:textSize="24sp"
                     android:textColor="@color/black"
                     android:background="@color/white"
                     android:padding="6dp"/>

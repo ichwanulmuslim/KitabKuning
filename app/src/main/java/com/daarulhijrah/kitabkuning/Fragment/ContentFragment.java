@@ -214,7 +214,7 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
 
     public void menuGrid(){
         dataMenuAwal.clear();
-        dataMenuAwal.add(new MenuAwal("Daftar Isi", ContextCompat.getDrawable(getActivity(), R.drawable.ic_launcher)));
+        dataMenuAwal.add(new MenuAwal("Daftar Isi", ContextCompat.getDrawable(getActivity(), R.drawable.icon512)));
         dataMenuAwal.add(new MenuAwal("Ditandai", ContextCompat.getDrawable(getActivity(), R.drawable.menu_favorite)));
         dataMenuAwal.add(new MenuAwal("Bacaan Terakhir", ContextCompat.getDrawable(getActivity(), R.drawable.menu_recent)));
         dataMenuAwal.add(new MenuAwal("Setting", ContextCompat.getDrawable(getActivity(), R.drawable.menu_setting)));
@@ -277,7 +277,7 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
                 try {
                     Log.e("Toko 0",response);
                     JSONObject json = new JSONObject(response);
-                    JSONArray data = json.getJSONArray(Config.TABEL_PROMOSI);
+                    JSONArray data = json.getJSONArray("records");
 
                     for (int i = 0; i < data.length(); i++) {
                         JSONObject object = data.getJSONObject(i);
@@ -307,6 +307,12 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error) {
+                if (error.networkResponse!= null) {
+                    Log.e("Volley Error", "Error code: " + error.networkResponse.statusCode);
+                    Log.e("Volley Error", "Error body: " + new String(error.networkResponse.data));
+                } else {
+                    Log.e("Volley Error", "Error: " + error.getMessage());
+                }
                 error.printStackTrace();
             }
         });
@@ -454,7 +460,7 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
 
                     Log.e("Toko 2",URL_TOKO_MITRA);
                     JSONObject json = new JSONObject(response);
-                    JSONArray data = json.getJSONArray(Config.TABEL_TOKO);
+                    JSONArray data = json.getJSONArray("records");
                     Log.e("Toko 3",dataTokoMitra.size()+" - "+response);
 
                     for (int i = 0; i < data.length(); i++) {
@@ -521,7 +527,7 @@ public class ContentFragment extends Fragment implements  AdapterView.OnItemClic
 
                     Log.e("Toko 2",URL_ChannelYoutube);
                     JSONObject json = new JSONObject(response);
-                    JSONArray data = json.getJSONArray(Config.TABEL_CHANNEL_YOUTUBE);
+                    JSONArray data = json.getJSONArray("records");
                     Log.e("Toko 3",dataChannelYoutube.size()+" - "+response);
 
                     for (int i = 0; i < data.length(); i++) {

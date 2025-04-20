@@ -5,8 +5,7 @@ body{
 h1 {
   font-weight: bold;
   color: white;
-  color: #000;
-  font-size: 36px;
+  font-size: 24px;
 }
 
 @font-face {
@@ -42,7 +41,7 @@ h1 {
 
 h2 {
   font-weight: normal;
-  font-size: 30px;
+  font-size: 24px;
   text-align: right;
   line-height: 2.0;
   direction: rtl;
@@ -50,7 +49,7 @@ h2 {
 }
 
 p {
-  font-size: 22px;
+  font-size: 20px;
   text-align: left;
   font-family:'nefel_adeti';
   color: white;

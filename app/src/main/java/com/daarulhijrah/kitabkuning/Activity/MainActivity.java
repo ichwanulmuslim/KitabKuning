@@ -6,20 +6,24 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 
 
-
+import android.os.Build;
 import android.os.Bundle;
 
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SwitchCompat;
@@ -35,6 +39,8 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class MainActivity extends AppCompatActivity {
 
+    private  View _decorView;
+    private GestureDetector _tapDetector;
     private DrawerLayout drawerLayout;
     private LinearLayout linearLayout;
     SharedPreferences.Editor editor;
@@ -42,11 +48,25 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAnalytics mFirebaseAnalytics;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
+        _decorView = getWindow().getDecorView();
+        hideSystemUI();
         setContentView(R.layout.activity_main);
+        _tapDetector = new GestureDetector(this,
+                new GestureDetector.SimpleOnGestureListener() {
+                    @Override
+                    public boolean onSingleTapUp(MotionEvent e) {
+                        boolean visible = (_decorView.getSystemUiVisibility() & View.SYSTEM_UI_FLAG_HIDE_NAVIGATION) == 0;
+                        if (visible)
+                            hideSystemUI();
+                        else
+                            showSystemUI();
+                        return true;
+                    }
+                });
 
         ContentFragment contentFragment = ContentFragment.newInstance(R.mipmap.ic_launcher);
         getSupportFragmentManager().beginTransaction()
@@ -97,8 +117,13 @@ public class MainActivity extends AppCompatActivity {
     private void setActionBar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setHomeButtonEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+//        getSupportActionBar().setHomeButtonEnabled(false);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        if (toolbar != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(R.string.app_name);
+            getSupportActionBar().setSubtitle(R.string.app_description);
+        }
     }
 
 
@@ -178,6 +203,34 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return false;
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        _tapDetector.onTouchEvent(ev);
+        return super.dispatchTouchEvent(ev);
+    }
+
+    private void hideSystemUI() {
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
+        _decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void showSystemUI() {
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
+        _decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    @Override
+    protected void onResume() {
+        hideSystemUI();
+        super.onResume();
     }
 
 

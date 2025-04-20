@@ -2,6 +2,7 @@ package com.daarulhijrah.kitabkuning.Activity;
 
 import static android.util.Log.e;
 
+import android.animation.Animator;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
@@ -18,6 +19,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.preference.PreferenceManager;
 
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +30,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.text.HtmlCompat;
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -48,6 +51,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -70,7 +75,6 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-//import com.sackcentury.shinebuttonlib.ShineButton;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -91,7 +95,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
     private ViewPager mViewPager;
 
     public static ImageView imgGambar;
-    public static TextView tvJudulArab, tvJudulIndonesia;
+//    public static TextView tvJudulArab, tvJudulIndonesia;
     public static WebView wvIsiArab, wvIsiIndonesia;
 
     public static TextView tvAlert;
@@ -114,6 +118,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_kitab_slider);
 
@@ -251,8 +256,8 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
             searchedText = iGet.getStringExtra("text_cari");
             Log.e("cari dalem",searchedText+" - "+id_tabel);
 
-            tvJudulArab = (TextView) rootView.findViewById(R.id.tv_frag_detail_kitab_judul_arab);
-            tvJudulIndonesia = (TextView) rootView.findViewById(R.id.tv_frag_detail_kitab_judul_indonesia);
+//            tvJudulArab = (TextView) rootView.findViewById(R.id.tv_frag_detail_kitab_judul_arab);
+//            tvJudulIndonesia = (TextView) rootView.findViewById(R.id.tv_frag_detail_kitab_judul_indonesia);
 
             //txtDescription = (WebView) findViewById(R.id.txtDescription);
             wvIsiArab = (WebView) rootView.findViewById(R.id.wv_fragment_detail_kitab_isi_arab);
@@ -261,29 +266,43 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
             NestedScrollView scroller = (NestedScrollView) rootView.findViewById(R.id.sclDetail);
             shineFavoriteBtn = (ExpressView) rootView.findViewById(R.id.likeButton);
 
-            if (scroller != null) {
+//            FloatingActionButton flNext = (FloatingActionButton) rootView.findViewById(R.id.fab_next);
+//            FloatingActionButton flPrev = (FloatingActionButton) rootView.findViewById(R.id.fab_prev);
 
-                scroller.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
-                    @Override
-                    public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+            
 
-                        if (scrollY > oldScrollY) {
-                            Log.i("Halo", "Scroll DOWN");
-                        }
-                        if (scrollY < oldScrollY) {
-                            Log.i("Halo", "Scroll UP");
-                        }
 
-                        if (scrollY == 0) {
-                            Log.i("Halo", "TOP SCROLL");
-                        }
-
-                        if (scrollY == (v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight())) {
-                            Log.i("Halo", "BOTTOM SCROLL");
-                        }
-                    }
-                });
-            }
+//            if (scroller != null) {
+//
+//                scroller.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+//                    @Override
+//                    public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+//
+//                        if (scrollY > oldScrollY) {
+//                            Log.i("Halo", "Scroll DOWN");
+//                            if (!searchedText.isEmpty()) {
+//                                flPrev.setVisibility(View.INVISIBLE);
+//                                flNext.setVisibility(View.INVISIBLE);
+//                            }
+//                        }
+//                        if (scrollY < oldScrollY) {
+//                            Log.i("Halo", "Scroll UP");
+//                            if (!searchedText.isEmpty()){
+//                                flPrev.setVisibility(View.VISIBLE);
+//                                flNext.setVisibility(View.VISIBLE);
+//                            }
+//                        }
+//
+//                        if (scrollY == 0) {
+//                            Log.i("Halo", "TOP SCROLL");
+//                        }
+//
+//                        if (scrollY == (v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight())) {
+//                            Log.i("Halo", "BOTTOM SCROLL");
+//                        }
+//                    }
+//                });
+//            }
 
             progressBar = (ProgressBar) rootView.findViewById(R.id.prgLoading);
             tvAlert = (TextView) rootView.findViewById(R.id.txtAlert);
@@ -353,22 +372,22 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                 Log.e("Dark 1", isDarkMode);
                 Log.e("String","Arab : "+searchedText+" - "+FontArab+", Latin : "+FontLatin+", Size Latin: "+sizeFontLatin+", Size Arab: "+sizeFontArab + sizeKontenFont);
 
-                if(!FontArab.equals(""))
-                    tvJudulArab.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), FontArab));
+//                if(!FontArab.equals(""))
+//                    tvJudulArab.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), FontArab));
+//
+//                if(!FontLatin.equals(""))
+//                    tvJudulIndonesia.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), FontLatin));
+//
+//                tvJudulArab.setTextSize(TypedValue.COMPLEX_UNIT_SP, Float.parseFloat(sizeFontArab));
+//                tvJudulIndonesia.setTextSize(TypedValue.COMPLEX_UNIT_SP, Float.parseFloat(sizeFontLatin));
 
-                if(!FontLatin.equals(""))
-                    tvJudulIndonesia.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), FontLatin));
-
-                tvJudulArab.setTextSize(TypedValue.COMPLEX_UNIT_SP, Float.parseFloat(sizeFontArab));
-                tvJudulIndonesia.setTextSize(TypedValue.COMPLEX_UNIT_SP, Float.parseFloat(sizeFontLatin));
-                tvJudulArab.setVisibility(View.GONE);
-                tvJudulIndonesia.setVisibility(View.GONE);
                 int id = (Integer) idKitab + 1;
                 int total = (Integer) ActivityGridViewList.numberOfItemsInResp;
 
-                tvJudulArab.setText(judulArab);
-                tvJudulIndonesia.setText(judulIndonesia+" ("+id+"/"+total+")");
+//                tvJudulArab.setText(judulArab);
+//                tvJudulIndonesia.setText(judulIndonesia+" ("+id+"/"+total+")");
                 ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getResources().getString(R.string.app_name));
+                ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowCustomEnabled(true);
 
                 WebSettings webSettings = wvIsiArab.getSettings();
                 webSettings.setJavaScriptEnabled(true);
@@ -376,9 +395,6 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
                     webSettings.setForceDark(WebSettings.FORCE_DARK_ON);
                 }
-
-
-
                 if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
                     WebSettingsCompat.setForceDark(wvIsiArab.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
                 }
@@ -403,16 +419,19 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                     cssStyle = "<link rel=\"stylesheet\" type=\"text/css\" href=\""+sizeKonten+"\" />";
                     Log.d("Dark-web",cssStyle);
                 }
+                ((AppCompatActivity)getActivity()).getSupportActionBar().setSubtitle(judulIndonesia);
 
-//                String cssStyle = "<link rel=\"stylesheet\" type=\"text/css\" href=\""+sizeKonten+"\" />";
                 String cssFontStyle = "<link rel=\"stylesheet\" type=\"text/css\" href=\""+sizeKontenFont+"\" />";
                 wvIsiArab.loadDataWithBaseURL("file:///android_asset/", "<html>"+cssStyle+cssFontStyle+"<body>"
-                        +"<h2>"+judulArab+"</h2><br>"
-                        +"<h1>"+judulIndonesia+"</h1><br>"
+                        +"<h2>"+judulArab+"</h2>"
+                        +"<h1>"+judulIndonesia+"</h1>"
+                        +"<p>("+id+"/"+total+")</p>"
                         +isiArab+
                         "</body></html>", "text/html", "UTF-8", "");
                 wvIsiArab.getSettings().setDefaultTextEncodingName("UTF-8");
                 wvIsiArab.findAllAsync(searchedText);
+//                wvIsiIndonesia.loadDataWithBaseURL(null, "<html><body><h1>Contoh Teks</h1><p>Ini adalah contoh teks yang akan di-highlight.</p></body></html>", "text/html", "UTF-8", null);
+//                wvIsiIndonesia.loadUrl("javascript:highlight('" + searchedText + "')");
 
                 wvIsiArab.setWebViewClient(new WebViewClient() {
                     @Override
@@ -421,6 +440,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                         // set the visibility to visible when
                         // the page starts loading
                         progressBar.setVisibility(View.VISIBLE);
+                        Log.e("cari","Page Started");
                     }
 
                     @Override
@@ -429,6 +449,21 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                         // set the visibility to gone when the page
                         // gets loaded completely
                         progressBar.setVisibility(View.GONE);
+                        wvIsiArab.findAllAsync(searchedText);
+//                        if (searchedText != null && !searchedText.equals("")) {
+//                            int i = wvIsiArab.findAll(searchedText);
+//                            Toast.makeText(getContext(), "Found " + i + " results !",
+//                                    Toast.LENGTH_SHORT).show();
+//                            try {
+//                                Method m = WebView.class.getMethod("setFindIsUp", Boolean.TYPE);
+//                                m.invoke(wvIsiArab, true);
+//                                Log.e("cari","Page Finished" + searchedText);
+//                                wvIsiArab.findAllAsync(searchedText);
+//                            } catch (Throwable ignored) {
+//                            }
+////                            searchedText = "";
+//                        }
+                        Log.e("cari","Page Finished");
                     }
                 });
 
@@ -444,29 +479,57 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                 final String URL_GAMBAR = urlGambar;
                 final String URL_AUDIO = urlAudio;
 
-                FloatingActionButton flBack = (FloatingActionButton) rootView.findViewById(R.id.fab_back);
-                flBack.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        idKitab = idKitab -1;
 
-                        dataSource.open();
-                        dataSource.resetRecent();
-                        dataSource.updateRecent(idKitab,1);
-                        Log.e("RECENT","ID - "+idKitab+" - Menu ID (KDMHS) : ");
-                        if(recent==0){
+                wvIsiArab.findAllAsync(searchedText);
+                wvIsiArab.findFocus();
+//                FloatingActionButton flNext = (FloatingActionButton) rootView.findViewById(R.id.fab_next);
+//                FloatingActionButton flPrev = (FloatingActionButton) rootView.findViewById(R.id.fab_prev);
+//                if (!searchedText.isEmpty()) {
+//
+//                    flPrev.setVisibility(View.VISIBLE);
+//                    flNext.setVisibility(View.VISIBLE);
+//
+//                } else {
+//
+//                    flPrev.setVisibility(View.INVISIBLE);
+//                    flNext.setVisibility(View.INVISIBLE);
+//                }
 
-                            Log.e("Favorite",idKitab+"ID - "+recent);
-                            Toast.makeText(getActivity(), "Tandai terakhir dibaca :"+idKitab, Toast.LENGTH_SHORT).show();
-                            getActivity().finish();
-                        }
-                        else {
-                            getActivity().finish();
-                        }
-                        dataSource.close();
+//                flNext.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+////                        wvIsiArab.findAllAsync(searchedText);
+//                        wvIsiArab.findNext(true);
+//                        wvIsiArab.setFindListener(new WebView.FindListener() {
+//
+//                            @Override
+//                            public void onFindResultReceived(int activeMatchOrdinal, int numberOfMatches, boolean isDoneCounting) {
+//                                wvIsiArab.findNext(true);
+//                                wvIsiArab.findFocus();
+//                            }
+//                        });
+//                        Toast.makeText(getContext(), "Next", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
 
-                    }
-                });
+
+//                flPrev.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+////                        wvIsiArab.findAllAsync(searchedText);
+//                        wvIsiArab.findNext(false);
+//                        wvIsiArab.setFindListener(new WebView.FindListener() {
+//                            @Override
+//                            public void onFindResultReceived(int activeMatchOrdinal, int numberOfMatches, boolean isDoneCounting) {
+//                                wvIsiArab.findNext(false);
+//                                wvIsiArab.findFocus();
+//                            }
+//                        });
+//                        Toast.makeText(getContext(), "Prev", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+
+
 
 
                 FloatingActionMenu flMenu = (FloatingActionMenu) rootView.findViewById(R.id.fl_menu);
@@ -489,7 +552,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                                         Toast.makeText(getContext(), "Teks terlalu panjang atau ada masalah jaringan", Toast.LENGTH_LONG).show();
                                     }
                                     speak(androidx.core.text.HtmlCompat.fromHtml(JUDUL_ARAB, HtmlCompat.FROM_HTML_MODE_LEGACY).toString());
-                                    speak(androidx.core.text.HtmlCompat.fromHtml(ISI_ARAB, HtmlCompat.FROM_HTML_MODE_LEGACY).toString().replaceAll("[a-zA-Z:.,)(1-9`~!@#$%^&*()_+[\\\\]\\\\\\\\;\\',./{}|:\\\"<>?]",""));
+                                    speak(androidx.core.text.HtmlCompat.fromHtml(ISI_ARAB, HtmlCompat.FROM_HTML_MODE_LEGACY).toString().replaceAll("[a-zA-Z:.,)(1-9`~!@#$'%^&*()_+[\\\\]\\\\\\\\;\\',./{}|:\\\"<>?]",""));
                                     Toast.makeText(getContext(), "TTS Bahasa", Toast.LENGTH_LONG).show();
                                     e("TTS Arab", androidx.core.text.HtmlCompat.fromHtml(ISI_ARAB, HtmlCompat.FROM_HTML_MODE_LEGACY).toString().replaceAll("[a-zA-Z:.,)(1-9`~!@#$%^&*()_+[\\\\]\\\\\\\\;\\',./{}|:\\\"<>?]",""));
 
@@ -564,7 +627,6 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                                 JUDUL_ARAB + "\n\n"+
                                 JUDUL_INDONESIA + "\n\n"+
                                 Html.fromHtml(ISI_ARAB).toString() + "\n\n"+
-                                ISI_INDONESIA+"\n\n"+
                                 "Silakan Edit Bagian mana yang salah";
 
                         Intent email = new Intent(Intent.ACTION_SEND, Uri.parse("mailto:" + getResources().getString(R.string.app_email)));
@@ -579,12 +641,6 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
                     }
                 });
             }
-            wvIsiArab.setWebViewClient(new WebViewClient(){
-                @Override
-                public void onPageFinished(WebView view, String url) {
-                    wvIsiArab.findAllAsync(searchedText);
-                }
-            });
 
             return rootView;
         }
@@ -617,10 +673,6 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
             }catch (Exception e){
 
             }
-
-
-//            return event.getAction() == KeyEvent.ACTION_DOWN;
-
         }
         return false;
     }
@@ -638,7 +690,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
     public void onPause() {
         if (adView != null) {
             adView.pause();
-            wvIsiArab.findAllAsync(searchedText);
+//            wvIsiArab.findAllAsync(searchedText);
         }
         super.onPause();
     }
@@ -649,7 +701,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
         super.onResume();
         if (adView != null) {
             adView.resume();
-            wvIsiArab.findAllAsync(searchedText);
+//            wvIsiArab.findAllAsync(searchedText);
         }
     }
 
@@ -657,7 +709,7 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
     public void onDestroy() {
         if (adView != null) {
             adView.destroy();
-            wvIsiArab.findAllAsync(searchedText);
+//            wvIsiArab.findAllAsync(searchedText);
         }
         try {
             tts.shutdown();
@@ -701,87 +753,5 @@ public class ActivityDetailKitabSlider extends AppCompatActivity {
         int adWidth = (int) (adWidthPixels / density);
         return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth);
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        // create an reference of menu
-        createMenu = menu;
-//        MenuInflater inflater = getSupport
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_activity_kitab, menu); // Pastikan Anda memiliki file menu.xml
-        return true;
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.itemSearch:
-                // create a searchView inside the actionbar
-                // when search menu item is clicked
-                SearchView searchView = (SearchView) item.getActionView();
-
-                // set the width to maximum
-                searchView.setMaxWidth(Integer.MAX_VALUE);
-                searchView.setQueryHint("Search any keyword..");
-
-                // set a listener when the start typing in the SearchView
-                searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                    @Override
-                    public boolean onQueryTextSubmit(String query) {
-                        // clear the focus when
-                        // the text is submitted
-                        searchView.clearFocus();
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onQueryTextChange(String query) {
-                        // When the query length is greater
-                        // than 0 we will perform the search
-                        if (query.length() > 0) {
-
-                            // findAllAsync finds all instances
-                            // on the page and
-                            // highlights them,asynchronously.
-                            wvIsiArab.findAllAsync(query);
-
-                            // set the visibility of nextItem
-                            // and previous item to true
-                            createMenu.getItem(1).setVisible(true);
-                            createMenu.getItem(2).setVisible(true);
-
-                        } else {
-                            wvIsiArab.clearMatches();
-
-                            // set the visibility of nextItem
-                            // and previous item to false
-                            // when query length is 0
-                            createMenu.getItem(1).setVisible(false);
-                            createMenu.getItem(2).setVisible(false);
-                        }
-                        return true;
-                    }
-                });
-                break;
-            case R.id.itemNext:
-                // findNext highlights and scrolls to the next match
-                // found by findAllAsync(String),
-                // wrapping around page boundaries as necessary.
-                // true scrolls to the next match
-                wvIsiArab.findNext(true);
-                break;
-            case R.id.itemPrevious:
-                // findNext highlights and scrolls to the next match
-                // found by findAllAsync(String),
-                // wrapping around page boundaries as necessary.
-                // false scrolls to the previous match
-                wvIsiArab.findNext(false);
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
-
 
 }

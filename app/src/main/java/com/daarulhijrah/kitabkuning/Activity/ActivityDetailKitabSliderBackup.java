@@ -3,12 +3,11 @@ package com.daarulhijrah.kitabkuning.Activity;
 import static android.util.Log.e;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Typeface;
-import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,6 +21,8 @@ import android.view.Display;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
@@ -33,9 +34,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.text.HtmlCompat;
@@ -225,6 +228,7 @@ public class ActivityDetailKitabSliderBackup extends AppCompatActivity {
                 ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.app_name);
             }
+
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -339,8 +343,6 @@ public class ActivityDetailKitabSliderBackup extends AppCompatActivity {
                 Log.e("Dark 1", isDarkMode);
                 Log.e("String","Arab : "+searchedText+" - "+FontArab+", Latin : "+FontLatin+", Size Latin: "+sizeFontLatin+", Size Arab: "+sizeFontArab + sizeKontenFont);
 
-
-
                 if(!FontArab.equals(""))
                     tvJudulArab.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), FontArab));
 
@@ -349,6 +351,7 @@ public class ActivityDetailKitabSliderBackup extends AppCompatActivity {
 
                 tvJudulArab.setTextSize(TypedValue.COMPLEX_UNIT_SP, Float.parseFloat(sizeFontArab));
                 tvJudulIndonesia.setTextSize(TypedValue.COMPLEX_UNIT_SP, Float.parseFloat(sizeFontLatin));
+
                 int id = (Integer) idKitab + 1;
                 int total = (Integer) ActivityGridViewList.numberOfItemsInResp;
 
@@ -362,9 +365,6 @@ public class ActivityDetailKitabSliderBackup extends AppCompatActivity {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                     webSettings.setForceDark(WebSettings.FORCE_DARK_ON);
                 }
-
-
-
                 if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
                     WebSettingsCompat.setForceDark(wvIsiArab.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
                 }
@@ -390,21 +390,33 @@ public class ActivityDetailKitabSliderBackup extends AppCompatActivity {
                     Log.d("Dark-web",cssStyle);
                 }
 
-//                String cssStyle = "<link rel=\"stylesheet\" type=\"text/css\" href=\""+sizeKonten+"\" />";
                 String cssFontStyle = "<link rel=\"stylesheet\" type=\"text/css\" href=\""+sizeKontenFont+"\" />";
-                wvIsiArab.loadDataWithBaseURL("file:///android_asset/", "<html>"+cssStyle+cssFontStyle+"<body>"+isiArab+"</body></html>", "text/html", "UTF-8", "");
+                wvIsiArab.loadDataWithBaseURL("file:///android_asset/", "<html>"+cssStyle+cssFontStyle+"<body>"
+                        +"<h2>"+judulArab+"</h2>"
+                        +"<h1>"+judulIndonesia+"</h1>"
+                        +"<p>("+id+"/"+total+")</p>"
+                        +isiArab+
+                        "</body></html>", "text/html", "UTF-8", "");
                 wvIsiArab.getSettings().setDefaultTextEncodingName("UTF-8");
                 wvIsiArab.findAllAsync(searchedText);
-                wvIsiArab.setFindListener(new WebView.FindListener() {
+
+                wvIsiArab.setWebViewClient(new WebViewClient() {
+                    @Override
+                    public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                        super.onPageStarted(view, url, favicon);
+                        // set the visibility to visible when
+                        // the page starts loading
+                        progressBar.setVisibility(View.VISIBLE);
+                    }
 
                     @Override
-                    public void onFindResultReceived(int activeMatchOrdinal, int numberOfMatches, boolean isDoneCounting) {
-                        Toast.makeText(getContext(), "Matches: " + numberOfMatches, Toast.LENGTH_LONG).show();
+                    public void onPageFinished(WebView view, String url) {
+                        super.onPageFinished(view, url);
+                        // set the visibility to gone when the page
+                        // gets loaded completely
+                        progressBar.setVisibility(View.GONE);
                     }
                 });
-
-//                WebSettingsCompat.setForceDark(wvIsiArab.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
-
 
                 Resources res = getResources();
                 int fontSize = res.getInteger(R.integer.font_size);
@@ -417,31 +429,6 @@ public class ActivityDetailKitabSliderBackup extends AppCompatActivity {
                 final String ISI_INDONESIA = isiIndonesia;
                 final String URL_GAMBAR = urlGambar;
                 final String URL_AUDIO = urlAudio;
-
-                FloatingActionButton flBack = (FloatingActionButton) rootView.findViewById(R.id.fab_back);
-                flBack.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        idKitab = idKitab -1;
-
-                        dataSource.open();
-                        dataSource.resetRecent();
-                        dataSource.updateRecent(idKitab,1);
-                        Log.e("RECENT","ID - "+idKitab+" - Menu ID (KDMHS) : ");
-                        if(recent==0){
-
-                            Log.e("Favorite",idKitab+"ID - "+recent);
-                            Toast.makeText(getActivity(), "Tandai terakhir dibaca :"+idKitab, Toast.LENGTH_SHORT).show();
-                            getActivity().finish();
-                        }
-                        else {
-                            getActivity().finish();
-                        }
-                        dataSource.close();
-
-                    }
-                });
-
 
                 FloatingActionMenu flMenu = (FloatingActionMenu) rootView.findViewById(R.id.fl_menu);
                 flMenu.setClosedOnTouchOutside(true);
@@ -559,21 +546,8 @@ public class ActivityDetailKitabSliderBackup extends AppCompatActivity {
                     wvIsiArab.findAllAsync(searchedText);
                 }
             });
+
             return rootView;
-        }
-    }
-
-
-    private static boolean isOnline(Context context)
-    {
-        try
-        {
-            ConnectivityManager cm = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
-            return cm.getActiveNetworkInfo().isConnectedOrConnecting();
-        }
-        catch (Exception e)
-        {
-            return false;
         }
     }
 
@@ -604,10 +578,6 @@ public class ActivityDetailKitabSliderBackup extends AppCompatActivity {
             }catch (Exception e){
 
             }
-
-
-//            return event.getAction() == KeyEvent.ACTION_DOWN;
-
         }
         return false;
     }
@@ -625,7 +595,7 @@ public class ActivityDetailKitabSliderBackup extends AppCompatActivity {
     public void onPause() {
         if (adView != null) {
             adView.pause();
-            wvIsiArab.findAllAsync(searchedText);
+//            wvIsiArab.findAllAsync(searchedText);
         }
         super.onPause();
     }
@@ -636,7 +606,7 @@ public class ActivityDetailKitabSliderBackup extends AppCompatActivity {
         super.onResume();
         if (adView != null) {
             adView.resume();
-            wvIsiArab.findAllAsync(searchedText);
+//            wvvIsiArab.findAllAsync(searchedText);
         }
     }
 
@@ -644,7 +614,7 @@ public class ActivityDetailKitabSliderBackup extends AppCompatActivity {
     public void onDestroy() {
         if (adView != null) {
             adView.destroy();
-            wvIsiArab.findAllAsync(searchedText);
+//            wvIsiArab.findAllAsync(searchedText);
         }
         try {
             tts.shutdown();
@@ -687,6 +657,87 @@ public class ActivityDetailKitabSliderBackup extends AppCompatActivity {
 
         int adWidth = (int) (adWidthPixels / density);
         return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        // create an reference of menu
+        createMenu = menu;
+//        MenuInflater inflater = getSupport
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_activity_kitab, menu); // Pastikan Anda memiliki file menu.xml
+        return true;
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.itemSearch:
+                // create a searchView inside the actionbar
+                // when search menu item is clicked
+                SearchView searchView = (SearchView) item.getActionView();
+
+                // set the width to maximum
+                searchView.setMaxWidth(Integer.MAX_VALUE);
+                searchView.setQueryHint("Search any keyword..");
+
+                // set a listener when the start typing in the SearchView
+                searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                    @Override
+                    public boolean onQueryTextSubmit(String query) {
+                        // clear the focus when
+                        // the text is submitted
+                        searchView.clearFocus();
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onQueryTextChange(String query) {
+                        // When the query length is greater
+                        // than 0 we will perform the search
+                        if (query.length() > 0) {
+
+                            // findAllAsync finds all instances
+                            // on the page and
+                            // highlights them,asynchronously.
+                            wvIsiArab.findAllAsync(query);
+
+                            // set the visibility of nextItem
+                            // and previous item to true
+                            createMenu.getItem(1).setVisible(true);
+                            createMenu.getItem(2).setVisible(true);
+
+                        } else {
+                            wvIsiArab.clearMatches();
+
+                            // set the visibility of nextItem
+                            // and previous item to false
+                            // when query length is 0
+                            createMenu.getItem(1).setVisible(false);
+                            createMenu.getItem(2).setVisible(false);
+                        }
+                        return true;
+                    }
+                });
+                break;
+            case R.id.itemNext:
+                // findNext highlights and scrolls to the next match
+                // found by findAllAsync(String),
+                // wrapping around page boundaries as necessary.
+                // true scrolls to the next match
+                wvIsiArab.findNext(true);
+                break;
+            case R.id.itemPrevious:
+                // findNext highlights and scrolls to the next match
+                // found by findAllAsync(String),
+                // wrapping around page boundaries as necessary.
+                // false scrolls to the previous match
+                wvIsiArab.findNext(false);
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 
 

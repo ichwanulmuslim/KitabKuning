@@ -105,6 +105,7 @@ public class ActivityGridViewList extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle(R.string.app_name);
+            getSupportActionBar().setSubtitle(R.string.app_description);
         }
 
         Intent iGet = getIntent();
@@ -327,7 +328,7 @@ public class ActivityGridViewList extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
 //        String URL = MenuAPI+"?auth=bab&id="+email+"&key="+keyword+"&order="+order;
         String URL_KITAB = Config.API_URL+prefPathAplikasi+Config.JSON_FORMAT+Config.ORDER_KITAB_ASC;
-
+        Log.e("URL KITAB",URL_KITAB);
         requestQueue = Volley.newRequestQueue(this);
         StringRequest req = new StringRequest(Request.Method.GET, URL_KITAB, new Response.Listener<String>() {
             @Override
@@ -337,7 +338,7 @@ public class ActivityGridViewList extends AppCompatActivity {
 
                     Log.e("URL JSON",URL_KITAB);
                     JSONObject json = new JSONObject(response);
-                    JSONArray data = json.getJSONArray(prefPathAplikasi);
+                    JSONArray data = json.getJSONArray("records");
                     Log.e("Result",data.length()+"");
                     numberOfItemsInResp = data.length();
 

@@ -1,7 +1,10 @@
 package com.daarulhijrah.kitabkuning.Activity;
 
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
@@ -52,6 +56,20 @@ public class ActivityProfile extends AppCompatActivity {
         webview.setWebViewClient(new myWebClient());
 //        webview.loadUrl("file:///android_asset/html/profile.html");
         webview.loadUrl("https://daarulhijrah.org/profil/");
+
+        final SharedPreferences mSharedPreference= PreferenceManager.getDefaultSharedPreferences(this);
+        String isDarkMode = mSharedPreference.getString("prefTheme", "false");
+
+        if (isDarkMode.equals("true")) {
+            AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_YES);
+            Log.d("Dark Atas","Disable Dark Mode");
+        }
+        else {
+            AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_NO);
+            Log.d("Dark Atas","Enable Dark Mode");
+        }
 
         webview.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
